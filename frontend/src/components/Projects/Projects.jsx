@@ -58,7 +58,7 @@ const PROJECTS = [
     title: 'Dev Portfolio Hub',
     description: 'My personal developer portfolio featuring a modern dark theme, Framer Motion animations, a working backend contact form, and a fully responsive layout.',
     tags: ['React', 'Tailwind', 'Node.js', 'MongoDB'],
-    github: 'https://github.com/AkshayaSanga/portfolio',
+    github: 'https://github.com/AkshayaSanga/AkshayaSanga-portfolio',
     demo: 'https://akshayasanga.vercel.app',
     featured: false,
     category: 'Software Dev',

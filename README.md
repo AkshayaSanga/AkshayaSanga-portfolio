@@ -60,8 +60,8 @@ akshaya-portfolio/
 ### 1. Clone & Install
 
 ```bash
-git clone https://github.com/AkshayaSanga/portfolio.git
-cd akshaya-portfolio
+git clone https://github.com/AkshayaSanga/AkshayaSanga-portfolio.git
+cd AkshayaSanga-portfolio
 npm run install:all
 ```
 
