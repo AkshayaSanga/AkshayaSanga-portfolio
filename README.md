@@ -144,7 +144,7 @@ cd frontend
 vercel --prod
 
 # Set environment variable in Vercel dashboard:
-# VITE_API_URL = https://your-backend.render.com
+# VITE_API_URL = https://akshaya-portfolio-backend.onrender.com
 ```
 
 ### Backend → Render

@@ -1,13 +1,14 @@
 import { Toaster } from 'react-hot-toast'
-import Navbar from './components/Navbar/Navbar'
-import Hero from './components/Hero/Hero'
 import About from './components/About/About'
-import Skills from './components/Skills/Skills'
-import Projects from './components/Projects/Projects'
 import Certifications from './components/Certifications/Certifications'
 import CodingProfiles from './components/CodingProfiles/CodingProfiles'
 import Contact from './components/Contact/Contact'
+import Experience from './components/Experience/Experience'
 import Footer from './components/Footer/Footer'
+import Hero from './components/Hero/Hero'
+import Navbar from './components/Navbar/Navbar'
+import Projects from './components/Projects/Projects'
+import Skills from './components/Skills/Skills'
 
 export default function App() {
   return (
@@ -38,6 +39,7 @@ export default function App() {
       <main className="relative z-10">
         <Hero />
         <About />
+        <Experience />
         <Skills />
         <Projects />
         <Certifications />

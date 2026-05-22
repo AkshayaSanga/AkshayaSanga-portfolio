@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
+import { HiBadgeCheck, HiExternalLink } from 'react-icons/hi'
+import { SiCoursera, SiGoogle, SiMeta, SiUdemy } from 'react-icons/si'
 import { useInView } from 'react-intersection-observer'
-import { HiExternalLink, HiBadgeCheck } from 'react-icons/hi'
-import { SiCoursera, SiUdemy, SiGoogle, SiMeta } from 'react-icons/si'
 
 const CERTIFICATIONS = [
   {
@@ -135,15 +135,17 @@ export default function Certifications() {
                   </div>
 
                   {/* Link */}
-                  <a
-                    href={cert.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 font-mono text-xs text-primary-400 hover:text-primary-300 transition-colors group/link"
-                  >
-                    View Credential
-                    <HiExternalLink size={12} className="group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
-                  </a>
+                  {cert.link && cert.link !== '#' && (
+                    <a
+                      href={cert.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 font-mono text-xs text-primary-400 hover:text-primary-300 transition-colors group/link"
+                    >
+                      View Credential
+                      <HiExternalLink size={12} className="group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
+                    </a>
+                  )}
                 </div>
               </motion.div>
             )

@@ -3,6 +3,7 @@ import { SiLeetcode } from 'react-icons/si'
 
 const NAV = [
   { label: 'About',          href: '#about' },
+  { label: 'Experience',     href: '#experience' },
   { label: 'Skills',         href: '#skills' },
   { label: 'Projects',       href: '#projects' },
   { label: 'Certifications', href: '#certifications' },

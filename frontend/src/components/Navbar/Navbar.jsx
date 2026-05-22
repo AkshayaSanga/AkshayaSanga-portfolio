@@ -1,9 +1,10 @@
-import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
+import { useEffect, useState } from 'react'
 import { HiMenuAlt3, HiX } from 'react-icons/hi'
 
 const NAV_LINKS = [
   { label: 'About',        href: '#about' },
+  { label: 'Experience',   href: '#experience' },
   { label: 'Skills',       href: '#skills' },
   { label: 'Projects',     href: '#projects' },
   { label: 'Certifications', href: '#certifications' },

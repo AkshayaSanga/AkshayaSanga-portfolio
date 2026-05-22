@@ -42,7 +42,7 @@ export default function Hero() {
         className="mb-8 inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary-500/30 bg-primary-500/5 text-primary-400 font-mono text-xs"
       >
         <span className="w-2 h-2 rounded-full bg-primary-400 animate-pulse" />
-        Final Year CSE Student | Seeking SDE Roles
+        Computer Science Engineer | Open to Opportunities
       </motion.div>
 
       {/* Main content */}
