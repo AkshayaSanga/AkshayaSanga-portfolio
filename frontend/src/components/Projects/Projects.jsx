@@ -26,8 +26,8 @@ const PROJECTS = [
     demo: '',
     featured: true,
     category: 'Data Analytics',
-    gradient: 'from-primary-600/20 to-emerald-600/10',
-    accentColor: '#1da967',
+    gradient: 'from-blue-600/20 to-cyan-600/10',
+    accentColor: '#3b82f6',
   },
   {
     id: 3,
@@ -38,8 +38,8 @@ const PROJECTS = [
     demo: '', 
     featured: false,
     category: 'Data Analytics',
-    gradient: 'from-amber-600/20 to-yellow-600/10',
-    accentColor: '#f59e0b',
+    gradient: 'from-sky-600/20 to-blue-500/10',
+    accentColor: '#0ea5e9',
   },
   {
     id: 4,
@@ -50,8 +50,8 @@ const PROJECTS = [
     demo: '',
     featured: false,
     category: 'Software Dev',
-    gradient: 'from-purple-600/20 to-pink-600/10',
-    accentColor: '#a855f7',
+    gradient: 'from-indigo-600/20 to-blue-600/10',
+    accentColor: '#4f46e5',
   },
   {
     id: 5,
@@ -62,8 +62,8 @@ const PROJECTS = [
     demo: 'https://akshayasanga.vercel.app',
     featured: false,
     category: 'Software Dev',
-    gradient: 'from-teal-600/20 to-cyan-600/10',
-    accentColor: '#14b8a6',
+    gradient: 'from-blue-500/20 to-cyan-500/10',
+    accentColor: '#3b82f6',
   },
 ]
 
@@ -158,9 +158,9 @@ function ProjectCard({ project, index, inView }) {
           </div>
         </div>
         {project.featured && (
-          <div className="absolute top-3 right-3 flex items-center gap-1 px-2 py-1 rounded-full bg-yellow-500/20 border border-yellow-500/30">
-            <HiStar size={10} className="text-yellow-400" />
-            <span className="font-mono text-xs text-yellow-400">Featured</span>
+          <div className="absolute top-3 right-3 flex items-center gap-1 px-2 py-1 rounded-full bg-blue-500/20 border border-blue-500/30">
+            <HiStar size={10} className="text-blue-400" />
+            <span className="font-mono text-xs text-blue-400">Featured</span>
           </div>
         )}
         <div className="absolute top-3 left-3 tag">{project.category}</div>

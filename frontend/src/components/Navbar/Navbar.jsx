@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, motion, useScroll, useSpring } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { HiMenuAlt3, HiX } from 'react-icons/hi'
 
@@ -16,6 +16,9 @@ export default function Navbar() {
   const [scrolled,  setScrolled]  = useState(false)
   const [menuOpen,  setMenuOpen]  = useState(false)
   const [active,    setActive]    = useState('')
+
+  const { scrollYProgress } = useScroll()
+  const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 })
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -56,6 +59,9 @@ export default function Navbar() {
             : 'py-5'
         }`}
       >
+        {/* Scroll Progress Bar */}
+        <motion.div className="absolute top-0 left-0 right-0 h-[2px] bg-primary-500 origin-left z-50" style={{ scaleX }} />
+
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo */}
           <a

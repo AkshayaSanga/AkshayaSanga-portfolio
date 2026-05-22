@@ -9,7 +9,7 @@ const PROFILES = [
     handle: '@AkshayaSanga',
     url: 'https://github.com/AkshayaSanga',
     icon: FaGithub,
-    color: '#ffffff',
+    color: '#94a3b8',
     bg: 'from-slate-700/30 to-slate-800/20',
     stats: [
       { label: 'Repositories', value: '9' },
@@ -23,8 +23,8 @@ const PROFILES = [
     handle: 'SangaAkshaya',
     url: 'https://leetcode.com/u/SangaAkshaya/',
     icon: SiLeetcode,
-    color: '#ffa116',
-    bg: 'from-yellow-600/20 to-orange-600/10',
+    color: '#3b82f6',
+    bg: 'from-blue-600/20 to-indigo-600/10',
     stats: [
       { label: 'Problems Solved', value: '400+' },
       { label: 'Contest Rating',  value: '1550+' },
@@ -37,8 +37,8 @@ const PROFILES = [
     handle: '23891A05I0',
     url: 'https://www.hackerrank.com/profile/23891A05I0',
     icon: SiHackerrank,
-    color: '#00ea64',
-    bg: 'from-primary-600/20 to-emerald-600/10',
+    color: '#0ea5e9',
+    bg: 'from-sky-600/20 to-blue-600/10',
     stats: [
       { label: 'Problem Solving', value: '5★' },
       { label: 'Certifications',  value: '2' },
@@ -51,8 +51,8 @@ const PROFILES = [
     handle: 'AkshayaSanga',
     url: 'https://www.linkedin.com/in/akshaya-sanga-b9bb07307',
     icon: FaLinkedin,
-    color: '#0a66c2',
-    bg: 'from-blue-600/20 to-cyan-600/10',
+    color: '#2563eb',
+    bg: 'from-blue-500/20 to-cyan-500/10',
     stats: [
       { label: 'Connections',  value: '500+' },
       { label: 'Endorsements', value: '40+' },
@@ -63,10 +63,10 @@ const PROFILES = [
   {
     name: 'GeeksforGeeks',
     handle: 'SangaAkshaya',
-    url: 'https://geeksforgeeks.org/user/SangaAkshaya',
+    url: 'https://share.google/9yZ9sNh21z9IIKx5O',
     icon: SiGeeksforgeeks,
-    color: '#2f8d46',
-    bg: 'from-green-600/20 to-teal-600/10',
+    color: '#0284c7',
+    bg: 'from-cyan-600/20 to-sky-600/10',
     stats: [
       { label: 'Coding Score',   value: '600+' },
       { label: 'Problems',       value: '150+' },
@@ -76,11 +76,11 @@ const PROFILES = [
   },
   {
     name: 'CodeChef',
-    handle: 'SangaAkshaya',
-    url: 'https://codechef.com/users/SangaAkshaya',
+    handle: 'sangaakshaya',
+    url: 'https://www.codechef.com/users/sangaakshaya',
     icon: SiCodechef,
-    color: '#5b4638',
-    bg: 'from-amber-600/20 to-yellow-600/10',
+    color: '#4f46e5',
+    bg: 'from-indigo-600/20 to-blue-600/10',
     stats: [
       { label: 'Rating',        value: '1600+' },
       { label: 'Global Rank',   value: 'Top 20%' },

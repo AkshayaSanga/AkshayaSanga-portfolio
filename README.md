@@ -2,10 +2,10 @@
 
 > Full-stack developer portfolio built with React, Node.js, Express, and MongoDB for AkshayaSanga.
 
-![Tech Stack](https://img.shields.io/badge/Stack-MERN-1da967?style=flat-square)
+![Tech Stack](https://img.shields.io/badge/Stack-MERN-3b82f6?style=flat-square)
 ![Frontend](https://img.shields.io/badge/Frontend-React_+_Tailwind-61dafb?style=flat-square)
-![Backend](https://img.shields.io/badge/Backend-Node_+_Express-339933?style=flat-square)
-![Database](https://img.shields.io/badge/Database-MongoDB-47a248?style=flat-square)
+![Backend](https://img.shields.io/badge/Backend-Node_+_Express-2563eb?style=flat-square)
+![Database](https://img.shields.io/badge/Database-MongoDB-0284c7?style=flat-square)
 
 ---
 

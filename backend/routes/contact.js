@@ -58,18 +58,18 @@ const sendEmail = async ({ name, email, subject, message }) => {
     replyTo: email,
     subject: `[Portfolio] ${subject || 'New Contact Message'} - ${name}`,
     html: `
-      <div style="font-family: 'Segoe UI', sans-serif; max-width: 600px; margin: 0 auto; background: #020408; color: #e2e8f0; border-radius: 12px; overflow: hidden; border: 1px solid #1a3347;">
-        <div style="background: linear-gradient(135deg, #1da967, #00f5d4); padding: 24px 32px;">
+      <div style="font-family: 'Segoe UI', sans-serif; max-width: 600px; margin: 0 auto; background: #090f19; color: #e2e8f0; border-radius: 12px; overflow: hidden; border: 1px solid #334155;">
+        <div style="background: linear-gradient(135deg, #3b82f6, #38bdf8); padding: 24px 32px;">
           <h1 style="margin:0; color: #020408; font-size: 22px; font-weight: 700;">New Contact Message</h1>
           <p style="margin: 4px 0 0; color: #020408; opacity: 0.8; font-size: 13px;">From your portfolio website</p>
         </div>
         <div style="padding: 32px;">
           <table style="width:100%; border-collapse: collapse;">
             <tr><td style="padding: 8px 0; color: #64748b; font-size: 13px; width: 90px;">Name</td><td style="padding: 8px 0; color: #e2e8f0; font-weight: 600;">${name}</td></tr>
-            <tr><td style="padding: 8px 0; color: #64748b; font-size: 13px;">Email</td><td style="padding: 8px 0;"><a href="mailto:${email}" style="color: #1da967;">${email}</a></td></tr>
+            <tr><td style="padding: 8px 0; color: #64748b; font-size: 13px;">Email</td><td style="padding: 8px 0;"><a href="mailto:${email}" style="color: #3b82f6;">${email}</a></td></tr>
             <tr><td style="padding: 8px 0; color: #64748b; font-size: 13px;">Subject</td><td style="padding: 8px 0; color: #e2e8f0;">${subject || 'No Subject'}</td></tr>
           </table>
-          <div style="margin-top: 20px; padding: 16px; background: #0c1a24; border-radius: 8px; border-left: 3px solid #1da967;">
+          <div style="margin-top: 20px; padding: 16px; background: #1e293b; border-radius: 8px; border-left: 3px solid #3b82f6;">
             <p style="margin: 0; color: #94a3b8; font-size: 13px; white-space: pre-wrap;">${message}</p>
           </div>
         </div>

@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion'
+import { HiCode, HiDatabase, HiLightningBolt, HiServer } from 'react-icons/hi'
 import { useInView } from 'react-intersection-observer'
-import { HiCode, HiServer, HiDatabase, HiLightningBolt } from 'react-icons/hi'
 
 const HIGHLIGHTS = [
   { icon: HiCode,          label: 'Frontend',  value: 'React.js',   color: 'text-blue-400' },
   { icon: HiServer,        label: 'Backend',   value: 'Node.js',    color: 'text-primary-400' },
-  { icon: HiDatabase,      label: 'Database',  value: 'MongoDB',    color: 'text-green-400' },
-  { icon: HiLightningBolt, label: 'Projects',  value: '10+',        color: 'text-yellow-400' },
+  { icon: HiDatabase,      label: 'Database',  value: 'MongoDB',    color: 'text-sky-400' },
+  { icon: HiLightningBolt, label: 'Projects',  value: '10+',        color: 'text-indigo-400' },
 ]
 
 const STATS = [
@@ -132,8 +132,12 @@ export default function About() {
                     ))}
                   </div>
                   <div className="relative z-10 text-center">
-                    <div className="w-28 h-28 rounded-full bg-gradient-to-br from-primary-500 to-accent-cyan flex items-center justify-center mx-auto mb-4 shadow-lg shadow-primary-500/30">
-                      <span className="font-display font-bold text-5xl text-dark-950">AS</span>
+                    <div className="w-28 h-28 rounded-full border-2 border-primary-500/50 mx-auto mb-4 shadow-lg shadow-primary-500/30 overflow-hidden bg-dark-900">
+                      <img 
+                        src="/profile.jpeg" 
+                        alt="Akshaya Sanga" 
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                     <p className="font-display font-bold text-white text-xl">Akshaya Sanga</p>
                     <p className="text-primary-400 font-mono text-xs mt-1">Full-Stack Developer</p>

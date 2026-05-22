@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { Toaster } from 'react-hot-toast'
 import About from './components/About/About'
 import Certifications from './components/Certifications/Certifications'
@@ -11,8 +12,26 @@ import Projects from './components/Projects/Projects'
 import Skills from './components/Skills/Skills'
 
 export default function App() {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+
+  useEffect(() => {
+    const updateMousePosition = (e) => {
+      setMousePosition({ x: e.clientX, y: e.clientY })
+    }
+    window.addEventListener('mousemove', updateMousePosition)
+    return () => window.removeEventListener('mousemove', updateMousePosition)
+  }, [])
+
   return (
     <div className="min-h-screen bg-dark-950 relative overflow-x-hidden">
+      {/* Dynamic Mouse Spotlight */}
+      <div 
+        className="pointer-events-none fixed inset-0 z-0 transition-opacity duration-300"
+        style={{
+          background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(59, 130, 246, 0.07), transparent 80%)`
+        }}
+      />
+
       {/* Ambient background orbs */}
       <div className="fixed inset-0 pointer-events-none z-0" aria-hidden="true">
         <div className="absolute top-[-10%] left-[20%] w-[600px] h-[600px] rounded-full bg-primary-500/5 blur-[120px] animate-pulse-slow" />
@@ -24,13 +43,13 @@ export default function App() {
         position="top-right"
         toastOptions={{
           style: {
-            background: '#0c1a24',
+            background: '#1e293b',
             color: '#e2e8f0',
-            border: '1px solid #1a3347',
-            fontFamily: 'DM Sans, sans-serif',
+            border: '1px solid #334155',
+            fontFamily: 'Inter, system-ui, sans-serif',
           },
-          success: { iconTheme: { primary: '#1da967', secondary: '#020408' } },
-          error:   { iconTheme: { primary: '#ef4444', secondary: '#020408' } },
+          success: { iconTheme: { primary: '#3b82f6', secondary: '#090f19' } },
+          error:   { iconTheme: { primary: '#ef4444', secondary: '#090f19' } },
         }}
       />
 

@@ -2,7 +2,8 @@ import axios from 'axios'
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import toast from 'react-hot-toast'
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
+import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import { FaXTwitter } from 'react-icons/fa6'
 import { HiLocationMarker, HiMail, HiPaperAirplane } from 'react-icons/hi'
 import { useInView } from 'react-intersection-observer'
 
@@ -14,7 +15,7 @@ const CONTACT_INFO = [
 const SOCIAL = [
   { icon: FaGithub,   href: 'https://github.com/AkshayaSanga',    label: 'GitHub' },
   { icon: FaLinkedin, href: 'https://www.linkedin.com/in/akshaya-sanga-b9bb07307', label: 'LinkedIn' },
-  { icon: FaTwitter,  href: 'https://twitter.com/akshayasanga',   label: 'Twitter' },
+  { icon: FaXTwitter, href: 'https://x.com/AKSHAYA18449883',      label: 'Twitter' },
 ]
 
 const INITIAL = { name: '', email: '', subject: '', message: '' }
