@@ -8,7 +8,7 @@ const PROJECTS = [
   {
     id: 1,
     title: 'AI-Based Retail Analytics',
-    description: 'Data analytics platform for retail sales analysis and forecasting. Implemented data cleaning, transformation, and applied machine learning models to generate predictive insights.',
+    description: 'Built a full-stack retail analytics platform with interactive dashboards, data visualization, and machine learning-based sales forecasting.',
     tags: ['Python', 'SQL', 'Machine Learning', 'Power BI'],
     github: 'https://github.com/AkshayaSanga/ai-retail-analytics-platform',
     demo: '',
@@ -20,7 +20,7 @@ const PROJECTS = [
   {
     id: 2,
     title: 'Credit Risk Analysis System',
-    description: 'Predictive system to assess loan default risk using machine learning techniques and classification algorithms. Integrated model explainability to enhance decision-making.',
+    description: 'Developed a predictive credit risk assessment system using classification algorithms. Integrated model explainability and robust backend logic to enhance financial decision-making.',
     tags: ['Python', 'Machine Learning', 'Data Science'],
     github: 'https://github.com/AkshayaSanga/credit-risk-analysis-system',
     demo: '',
@@ -32,7 +32,7 @@ const PROJECTS = [
   {
     id: 3,
     title: 'Stock Market Dashboard',
-    description: 'Interactive dashboard to analyze and visualize stock market trends. Processed historical financial data using Python to identify patterns and support data-driven decisions.',
+    description: 'Engineered an interactive stock market dashboard to analyze financial trends. Processed historical data via Python to build a responsive, data-driven UI for pattern identification.',
     tags: ['Python', 'Data Visualization', 'Pandas'],
     github: 'https://github.com/AkshayaSanga/Stock-Market-Analytics-Dashboard',
     demo: '', 
@@ -104,8 +104,8 @@ export default function Projects() {
               onClick={() => setFilter(cat)}
               className={`px-5 py-2 rounded-full font-body text-sm transition-all duration-300 ${
                 filter === cat
-                  ? 'bg-primary-500 text-white shadow-lg shadow-primary-500/25'
-                  : 'glass-card border border-dark-600/50 text-slate-400 hover:text-primary-400 hover:border-primary-500/30'
+                  ? 'bg-blue-600 text-white shadow-sm'
+                  : 'bg-[#111827] border border-gray-800/60 text-gray-400 hover:text-blue-400 hover:border-gray-700'
               }`}
             >
               {cat}
@@ -139,10 +139,10 @@ function ProjectCard({ project, index, inView }) {
       initial={{ opacity: 0, y: 30 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay: index * 0.08 }}
-      className="glass-card glow-border group flex flex-col overflow-hidden hover:-translate-y-2 transition-transform duration-300"
+      className="bg-[#111827] border border-gray-800/60 rounded-2xl group flex flex-col overflow-hidden hover:-translate-y-1 hover:border-gray-700 hover:shadow-lg hover:shadow-black/20 transition-all duration-300"
     >
       {/* Card header */}
-      <div className={`h-32 bg-gradient-to-br ${project.gradient} flex items-center justify-center relative overflow-hidden`}>
+      <div className="h-32 bg-[#0B0F19]/50 flex items-center justify-center relative overflow-hidden border-b border-gray-800/60">
         <div
           className="absolute inset-0 opacity-20"
           style={{
@@ -158,27 +158,29 @@ function ProjectCard({ project, index, inView }) {
           </div>
         </div>
         {project.featured && (
-          <div className="absolute top-3 right-3 flex items-center gap-1 px-2 py-1 rounded-full bg-blue-500/20 border border-blue-500/30">
+          <div className="absolute top-3 right-3 flex items-center gap-1 px-2 py-1 rounded-full bg-[#111827] border border-gray-800/60 shadow-sm">
             <HiStar size={10} className="text-blue-400" />
             <span className="font-mono text-xs text-blue-400">Featured</span>
           </div>
         )}
-        <div className="absolute top-3 left-3 tag">{project.category}</div>
+        <div className="absolute top-3 left-3 px-2 py-1 rounded-full bg-[#111827] border border-gray-800/60 font-mono text-[10px] text-gray-400 uppercase tracking-wider">{project.category}</div>
       </div>
 
       {/* Card body */}
       <div className="p-6 flex flex-col flex-1">
-        <h3 className="font-display font-bold text-white text-lg mb-2 group-hover:text-primary-400 transition-colors duration-200">
+        <h3 className="font-display font-bold text-gray-100 text-lg mb-2 group-hover:text-blue-400 transition-colors duration-200">
           {project.title}
         </h3>
-        <p className="font-body text-slate-400 text-sm leading-relaxed flex-1 mb-5">
+        <p className="font-body text-gray-400 text-sm leading-relaxed flex-1 mb-6">
           {project.description}
         </p>
 
         {/* Tags */}
         <div className="flex flex-wrap gap-2 mb-5">
           {project.tags.map(tag => (
-            <span key={tag} className="tag">{tag}</span>
+            <span key={tag} className="px-2.5 py-1 rounded-md bg-[#0B0F19] border border-gray-800/60 font-mono text-xs text-gray-300">
+              {tag}
+            </span>
           ))}
         </div>
 
@@ -189,7 +191,7 @@ function ProjectCard({ project, index, inView }) {
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-outline flex-1 justify-center text-xs py-2 px-3"
+              className="flex-1 flex items-center justify-center gap-2 text-xs py-2.5 px-4 rounded-lg border border-gray-700 text-gray-300 hover:bg-gray-800 hover:text-white transition-colors"
             >
               <FaGithub size={14} /> Code
             </a>
@@ -199,7 +201,7 @@ function ProjectCard({ project, index, inView }) {
               href={project.demo}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary flex-1 justify-center text-xs py-2 px-3"
+              className="flex-1 flex items-center justify-center gap-2 text-xs py-2.5 px-4 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors"
             >
               <FaExternalLinkAlt size={12} /> Live Demo
             </a>

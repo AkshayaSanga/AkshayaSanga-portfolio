@@ -1,13 +1,16 @@
 import { motion } from 'framer-motion'
-import { FaChartBar, FaCss3Alt, FaDatabase, FaHtml5, FaJava } from 'react-icons/fa'
+import { FaAws, FaChartBar, FaCss3Alt, FaDatabase, FaHtml5, FaJava, FaServer } from 'react-icons/fa'
 import {
+  SiDocker,
   SiGit, SiGithub,
   SiJavascript,
   SiMongodb,
+  SiNextdotjs,
   SiNodedotjs,
   SiPostman,
   SiPython,
   SiReact,
+  SiTypescript,
   SiVercel
 } from 'react-icons/si'
 import { useInView } from 'react-intersection-observer'
@@ -47,7 +50,19 @@ const SKILL_GROUPS = [
       { name: 'GitHub', icon: SiGithub, level: 87, color: '#ffffff' },
       { name: 'MongoDB',icon: SiMongodb,level: 80, color: '#47a248' },
       { name: 'Postman',icon: SiPostman,level: 80, color: '#ff6c37' },
-      { name: 'Vercel', icon: SiVercel, level: 80, color: '#ffffff' },
+      { name: 'Vercel Deployment', icon: SiVercel, level: 80, color: '#ffffff' },
+    ],
+  },
+  {
+    category: 'Currently Learning',
+    color: 'from-orange-500/20 to-yellow-500/10',
+    accent: '#f59e0b',
+    skills: [
+      { name: 'Next.js',      icon: SiNextdotjs,         level: 0, color: '#ffffff' },
+      { name: 'TypeScript',   icon: SiTypescript,        level: 0, color: '#3178c6' },
+      { name: 'Docker',       icon: SiDocker,            level: 0, color: '#2496ed' },
+      { name: 'AWS',          icon: FaAws,               level: 0, color: '#ff9900' },
+      { name: 'System Design',icon: FaServer,            level: 0, color: '#94a3b8' },
     ],
   },
 ]
@@ -61,27 +76,29 @@ function SkillCard({ name, icon: Icon, level, color, delay }) {
       initial={{ opacity: 0, y: 20 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay }}
-      className="glass-card glow-border p-4 group hover:-translate-y-1 transition-transform duration-300"
+      className="bg-[#111827] border border-gray-800/60 rounded-2xl p-4 group hover:-translate-y-1 hover:border-gray-700 hover:shadow-lg hover:shadow-black/20 transition-all duration-300 shadow-sm"
     >
-      <div className="flex items-center gap-3 mb-3">
-        <div className="p-2 rounded-lg bg-dark-700/60 group-hover:scale-110 transition-transform duration-300">
+      <div className={`flex items-center gap-3 ${level > 0 ? 'mb-3' : ''}`}>
+        <div className="p-2 rounded-lg bg-[#0B0F19] group-hover:scale-110 transition-transform duration-300 border border-gray-800/60">
           <Icon size={20} style={{ color }} />
         </div>
         <div className="flex-1 min-w-0">
-          <p className="font-display font-semibold text-white text-sm truncate">{name}</p>
-          <p className="font-mono text-xs text-slate-500">{level}%</p>
+          <p className="font-display font-medium text-gray-200 text-sm truncate">{name}</p>
+          {level > 0 && <p className="font-mono text-xs text-gray-500 mt-0.5">{level}%</p>}
         </div>
       </div>
       {/* Progress bar */}
-      <div className="h-1 rounded-full bg-dark-700/80 overflow-hidden">
-        <motion.div
-          className="h-full rounded-full"
-          style={{ background: `linear-gradient(90deg, ${color}88, ${color})` }}
-          initial={{ width: 0 }}
-          animate={inView ? { width: `${level}%` } : { width: 0 }}
-          transition={{ duration: 1, delay: delay + 0.3, ease: 'easeOut' }}
-        />
-      </div>
+      {level > 0 && (
+        <div className="h-1 rounded-full bg-gray-800/60 overflow-hidden">
+          <motion.div
+            className="h-full rounded-full"
+            style={{ background: `linear-gradient(90deg, ${color}88, ${color})` }}
+            initial={{ width: 0 }}
+            animate={inView ? { width: `${level}%` } : { width: 0 }}
+            transition={{ duration: 1, delay: delay + 0.3, ease: 'easeOut' }}
+          />
+        </div>
+      )}
     </motion.div>
   )
 }
@@ -111,14 +128,13 @@ export default function Skills() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: gi * 0.15 }}
             >
-              <div className={`rounded-3xl bg-gradient-to-br ${group.color} border border-dark-600/30 p-8`}>
+              <div className="rounded-3xl bg-[#111827] border border-gray-800/60 p-8 shadow-sm">
                 <div className="flex items-center gap-3 mb-6">
                   <div
                     className="w-1 h-6 rounded-full"
                     style={{ background: group.accent }}
                   />
-                  <h3 className="font-display font-bold text-white text-xl">{group.category}</h3>
-                  <span className="font-mono text-xs text-slate-500 ml-auto">{group.skills.length} skills</span>
+                  <h3 className="font-display font-semibold text-gray-100 text-xl">{group.category}</h3>
                 </div>
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-3">
                   {group.skills.map((skill, si) => (

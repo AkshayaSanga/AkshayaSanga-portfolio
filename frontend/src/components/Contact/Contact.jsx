@@ -73,27 +73,27 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="lg:col-span-2 space-y-6"
           >
-            <div className="glass-card glow-border p-8">
-              <h3 className="font-display font-bold text-white text-xl mb-6">Contact Information</h3>
+            <div className="bg-[#111827] border border-gray-800/60 rounded-2xl p-8 shadow-sm">
+              <h3 className="font-display font-semibold text-gray-100 text-xl mb-6">Contact Information</h3>
               <div className="space-y-5">
                 {CONTACT_INFO.map(({ icon: Icon, label, value, href }) => (
                   <div key={label} className="flex items-start gap-4 group">
-                    <div className="p-2.5 rounded-xl bg-primary-500/10 border border-primary-500/20 text-primary-400 flex-shrink-0 group-hover:bg-primary-500/20 transition-colors">
+                    <div className="p-2.5 rounded-xl bg-[#0B0F19] border border-gray-800/60 text-gray-400 flex-shrink-0 group-hover:border-gray-700 group-hover:text-blue-400 transition-colors">
                       <Icon size={16} />
                     </div>
                     <div>
-                      <p className="font-mono text-xs text-slate-500 mb-0.5">{label}</p>
+                      <p className="font-mono text-xs text-gray-500 mb-0.5">{label}</p>
                       {href
-                        ? <a href={href} className="font-body text-slate-300 hover:text-primary-400 transition-colors text-sm">{value}</a>
-                        : <p className="font-body text-slate-300 text-sm">{value}</p>
+                        ? <a href={href} className="font-body text-gray-300 hover:text-blue-400 transition-colors text-sm">{value}</a>
+                        : <p className="font-body text-gray-300 text-sm">{value}</p>
                       }
                     </div>
                   </div>
                 ))}
               </div>
 
-              <div className="mt-8 pt-6 border-t border-dark-700/50">
-                <p className="font-mono text-xs text-slate-500 mb-4">Find me on</p>
+              <div className="mt-8 pt-6 border-t border-gray-800/60">
+                <p className="font-mono text-xs text-gray-500 mb-4">Find me on</p>
                 <div className="flex gap-3">
                   {SOCIAL.map(({ icon: Icon, href, label }) => (
                     <a
@@ -102,7 +102,7 @@ export default function Contact() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={label}
-                      className="p-3 rounded-xl border border-dark-600/60 bg-dark-800/50 text-slate-400 hover:text-primary-400 hover:border-primary-500/40 hover:bg-primary-500/5 transition-all duration-300 hover:-translate-y-0.5"
+                      className="p-3 rounded-xl border border-gray-800/60 bg-[#0B0F19] text-gray-400 hover:text-blue-400 hover:border-gray-700 transition-all duration-300 hover:-translate-y-0.5"
                     >
                       <Icon size={18} />
                     </a>
@@ -112,12 +112,12 @@ export default function Contact() {
             </div>
 
             {/* Availability card */}
-            <div className="glass-card glow-border p-6">
+            <div className="bg-[#111827] border border-gray-800/60 rounded-2xl p-6 shadow-sm">
               <div className="flex items-center gap-3 mb-3">
-                <span className="w-2.5 h-2.5 rounded-full bg-primary-400 animate-pulse" />
-                <span className="font-display font-semibold text-white text-sm">Currently Available</span>
+                <span className="w-2.5 h-2.5 rounded-full bg-blue-500 animate-pulse" />
+                <span className="font-display font-medium text-gray-200 text-sm">Currently Available</span>
               </div>
-              <p className="font-body text-slate-400 text-sm leading-relaxed">
+              <p className="font-body text-gray-400 text-sm leading-relaxed">
                 Open to full-time roles, freelance projects, and interesting collaborations. Response within 24–48 hours.
               </p>
             </div>
@@ -130,8 +130,8 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="lg:col-span-3"
           >
-            <div className="glass-card glow-border p-8">
-              <h3 className="font-display font-bold text-white text-xl mb-6">Send a Message</h3>
+            <div className="bg-[#111827] border border-gray-800/60 rounded-2xl p-8 shadow-sm">
+              <h3 className="font-display font-semibold text-gray-100 text-xl mb-6">Send a Message</h3>
               <form onSubmit={handleSubmit} className="space-y-5" noValidate>
                 <div className="grid sm:grid-cols-2 gap-5">
                   <FormField
@@ -160,7 +160,7 @@ export default function Contact() {
                   onChange={handleChange}
                 />
                 <div>
-                  <label className="block font-mono text-xs text-slate-400 mb-2 uppercase tracking-wider">
+                  <label className="block font-mono text-xs text-gray-400 mb-2 uppercase tracking-wider">
                     Message *
                   </label>
                   <textarea
@@ -169,8 +169,8 @@ export default function Contact() {
                     onChange={handleChange}
                     rows={5}
                     placeholder="Tell me about your project or opportunity..."
-                    className="w-full bg-dark-800/60 border border-dark-600/60 rounded-xl px-4 py-3 text-slate-200 placeholder-slate-600 font-body text-sm
-                               focus:outline-none focus:border-primary-500/60 focus:bg-dark-800/80 focus:ring-1 focus:ring-primary-500/20
+                    className="w-full bg-[#0B0F19] border border-gray-800/80 rounded-xl px-4 py-3 text-gray-200 placeholder-gray-600 font-body text-sm
+                               focus:outline-none focus:border-blue-500/50 focus:bg-[#0B0F19] focus:ring-1 focus:ring-blue-500/20
                                transition-all duration-200 resize-none"
                   />
                 </div>
@@ -178,7 +178,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="btn-primary w-full justify-center py-3.5 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0 group"
+                  className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0 group"
                 >
                   {loading ? (
                     <>
@@ -204,7 +204,7 @@ export default function Contact() {
 function FormField({ label, name, type, placeholder, value, onChange }) {
   return (
     <div>
-      <label htmlFor={name} className="block font-mono text-xs text-slate-400 mb-2 uppercase tracking-wider">
+      <label htmlFor={name} className="block font-mono text-xs text-gray-400 mb-2 uppercase tracking-wider">
         {label}
       </label>
       <input
@@ -214,8 +214,8 @@ function FormField({ label, name, type, placeholder, value, onChange }) {
         value={value}
         onChange={onChange}
         placeholder={placeholder}
-        className="w-full bg-dark-800/60 border border-dark-600/60 rounded-xl px-4 py-3 text-slate-200 placeholder-slate-600 font-body text-sm
-                   focus:outline-none focus:border-primary-500/60 focus:bg-dark-800/80 focus:ring-1 focus:ring-primary-500/20
+        className="w-full bg-[#0B0F19] border border-gray-800/80 rounded-xl px-4 py-3 text-gray-200 placeholder-gray-600 font-body text-sm
+                   focus:outline-none focus:border-blue-500/50 focus:bg-[#0B0F19] focus:ring-1 focus:ring-blue-500/20
                    transition-all duration-200"
       />
     </div>

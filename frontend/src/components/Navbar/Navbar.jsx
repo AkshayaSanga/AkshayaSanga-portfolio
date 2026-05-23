@@ -55,12 +55,12 @@ export default function Navbar() {
         transition={{ duration: 0.6, ease: 'easeOut' }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? 'py-3 bg-dark-900/80 backdrop-blur-xl border-b border-dark-700/50 shadow-xl shadow-dark-950/50'
+            ? 'py-3 bg-[#0B0F19]/80 backdrop-blur-md border-b border-gray-800/60'
             : 'py-5'
         }`}
       >
         {/* Scroll Progress Bar */}
-        <motion.div className="absolute top-0 left-0 right-0 h-[2px] bg-primary-500 origin-left z-50" style={{ scaleX }} />
+        <motion.div className="absolute top-0 left-0 right-0 h-[2px] bg-blue-500 origin-left z-50" style={{ scaleX }} />
 
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo */}
@@ -69,8 +69,8 @@ export default function Navbar() {
             onClick={e => handleNavClick(e, '#hero')}
             className="font-display text-xl font-bold group"
           >
-            <span className="text-white group-hover:text-primary-400 transition-colors duration-200">AS</span>
-            <span className="text-primary-400">.</span>
+            <span className="text-gray-100 group-hover:text-blue-400 transition-colors duration-200">AS</span>
+            <span className="text-blue-500">.</span>
           </a>
 
           {/* Desktop links */}
@@ -80,7 +80,7 @@ export default function Navbar() {
                 <a
                   href={link.href}
                   onClick={e => handleNavClick(e, link.href)}
-                  className={`nav-link ${active === link.href.slice(1) ? 'active text-primary-400' : ''}`}
+                  className={`text-sm font-medium transition-colors ${active === link.href.slice(1) ? 'text-blue-400' : 'text-gray-400 hover:text-gray-200'}`}
                 >
                   {link.label}
                 </a>
@@ -93,7 +93,7 @@ export default function Navbar() {
             href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden md:inline-flex btn-primary text-xs px-4 py-2"
+            className="hidden md:inline-flex text-xs px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors"
           >
             Resume
           </a>
@@ -101,7 +101,7 @@ export default function Navbar() {
           {/* Mobile toggle */}
           <button
             onClick={() => setMenuOpen(o => !o)}
-            className="md:hidden text-slate-300 hover:text-primary-400 transition-colors p-1"
+            className="md:hidden text-gray-300 hover:text-blue-400 transition-colors p-1"
             aria-label="Toggle menu"
           >
             {menuOpen ? <HiX size={24} /> : <HiMenuAlt3 size={24} />}
@@ -119,8 +119,8 @@ export default function Navbar() {
             transition={{ duration: 0.25 }}
             className="fixed inset-x-0 top-[60px] z-40 md:hidden"
           >
-            <div className="mx-4 rounded-2xl glass-card border border-dark-600/60 overflow-hidden">
-              <ul className="flex flex-col divide-y divide-dark-700/50">
+            <div className="mx-4 rounded-2xl bg-[#111827] border border-gray-800/60 shadow-xl overflow-hidden">
+              <ul className="flex flex-col divide-y divide-gray-800/60">
                 {NAV_LINKS.map((link, i) => (
                   <motion.li
                     key={link.href}
@@ -131,14 +131,14 @@ export default function Navbar() {
                     <a
                       href={link.href}
                       onClick={e => handleNavClick(e, link.href)}
-                      className="flex items-center px-6 py-4 text-slate-300 hover:text-primary-400 hover:bg-primary-500/5 transition-all duration-200 font-body"
+                      className="flex items-center px-6 py-4 text-gray-300 hover:text-blue-400 hover:bg-[#0B0F19] transition-all duration-200 font-body"
                     >
                       {link.label}
                     </a>
                   </motion.li>
                 ))}
                 <li className="p-4">
-                  <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="btn-primary w-full justify-center">
+                  <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="flex justify-center w-full py-2.5 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 transition-colors">
                     Download Resume
                   </a>
                 </li>

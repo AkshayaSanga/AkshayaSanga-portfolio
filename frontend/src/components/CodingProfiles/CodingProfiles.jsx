@@ -12,9 +12,7 @@ const PROFILES = [
     color: '#94a3b8',
     bg: 'from-slate-700/30 to-slate-800/20',
     stats: [
-      { label: 'Repositories', value: '9' },
-      { label: 'Stars',        value: '3' },
-      { label: 'Contributions', value: '90+' },
+      { label: 'Contributions', value: '90+ GitHub Contributions' },
     ],
     description: 'Open source contributions, personal projects, and collaborative work.',
   },
@@ -26,9 +24,7 @@ const PROFILES = [
     color: '#3b82f6',
     bg: 'from-blue-600/20 to-indigo-600/10',
     stats: [
-      { label: 'Problems Solved', value: '400+' },
-      { label: 'Contest Rating',  value: '1550+' },
-      { label: 'Top Percentage',  value: '30%' },
+      { label: 'Problems Solved', value: '400+ Problems Solved' },
     ],
     description: 'Daily problem solving with focus on DSA and algorithmic thinking.',
   },
@@ -40,9 +36,7 @@ const PROFILES = [
     color: '#0ea5e9',
     bg: 'from-sky-600/20 to-blue-600/10',
     stats: [
-      { label: 'Problem Solving', value: '5★' },
-      { label: 'Certifications',  value: '2' },
-      { label: 'Badges',          value: '10+' },
+      { label: 'Problem Solving', value: '5★ in Problem Solving' },
     ],
     description: 'Ranked developer with 5-star ratings in JavaScript and Problem Solving.',
   },
@@ -54,9 +48,7 @@ const PROFILES = [
     color: '#2563eb',
     bg: 'from-blue-500/20 to-cyan-500/10',
     stats: [
-      { label: 'Connections',  value: '500+' },
-      { label: 'Endorsements', value: '40+' },
-      { label: 'Followers',    value: '300+' },
+      { label: 'Connections',  value: '500+ Connections' },
     ],
     description: 'Professional network, career journey, and tech insights.',
   },
@@ -68,9 +60,7 @@ const PROFILES = [
     color: '#0284c7',
     bg: 'from-cyan-600/20 to-sky-600/10',
     stats: [
-      { label: 'Coding Score',   value: '600+' },
-      { label: 'Problems',       value: '150+' },
-      { label: 'Institute Rank', value: 'Top 10' },
+      { label: 'Problems Solved', value: '150+ Problems Solved' },
     ],
     description: 'Articles, problems, and contributions to the developer community.',
   },
@@ -82,9 +72,7 @@ const PROFILES = [
     color: '#4f46e5',
     bg: 'from-indigo-600/20 to-blue-600/10',
     stats: [
-      { label: 'Rating',        value: '1600+' },
-      { label: 'Global Rank',   value: 'Top 20%' },
-      { label: 'Stars',         value: '3★' },
+      { label: 'Rating', value: '1600+ Rating (3★)' },
     ],
     description: 'Competitive programming and monthly coding contests.',
   },
@@ -119,40 +107,38 @@ export default function CodingProfiles() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="glass-card glow-border group p-6 flex flex-col hover:-translate-y-2 transition-transform duration-300 cursor-pointer"
+                className="bg-[#111827] border border-gray-800/60 rounded-2xl group p-6 flex flex-col hover:-translate-y-1 hover:border-gray-700 hover:shadow-lg hover:shadow-black/20 transition-all duration-300 cursor-pointer"
               >
                 {/* Profile header */}
                 <div className="flex items-center gap-4 mb-4">
                   <div
-                    className={`w-14 h-14 rounded-2xl flex items-center justify-center bg-gradient-to-br ${profile.bg} border`}
-                    style={{ borderColor: `${profile.color}33` }}
+                    className="w-12 h-12 rounded-xl flex items-center justify-center bg-[#0B0F19] border border-gray-800/60"
                   >
                     <Icon size={26} style={{ color: profile.color }} />
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center gap-2">
-                      <h3 className="font-display font-bold text-white text-lg group-hover:text-primary-400 transition-colors">
+                      <h3 className="font-display font-semibold text-gray-100 text-lg group-hover:text-blue-400 transition-colors">
                         {profile.name}
                       </h3>
                       <FaExternalLinkAlt
                         size={10}
-                        className="text-slate-600 group-hover:text-primary-400 transition-colors group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+                        className="text-gray-600 group-hover:text-blue-400 transition-colors group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
                       />
                     </div>
                     <p className="font-mono text-xs text-slate-500">{profile.handle}</p>
                   </div>
                 </div>
 
-                <p className="font-body text-slate-400 text-sm leading-relaxed mb-5 flex-1">
+                <p className="font-body text-gray-400 text-sm leading-relaxed mb-6 flex-1">
                   {profile.description}
                 </p>
 
                 {/* Stats */}
-                <div className="grid grid-cols-3 gap-2">
+                <div className="mt-auto">
                   {profile.stats.map(stat => (
-                    <div key={stat.label} className="text-center p-2 rounded-xl bg-dark-800/50 border border-dark-700/40">
-                      <p className="font-display font-bold text-sm" style={{ color: profile.color }}>{stat.value}</p>
-                      <p className="font-mono text-xs text-slate-600 mt-0.5 leading-tight">{stat.label}</p>
+                    <div key={stat.label} className="w-full text-center py-2.5 rounded-xl bg-[#0B0F19]/50 border border-gray-800/60">
+                      <span className="font-display font-medium text-sm text-gray-300">{stat.value}</span>
                     </div>
                   ))}
                 </div>

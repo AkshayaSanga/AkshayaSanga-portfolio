@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@400;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -19,11 +21,8 @@
   }
 
   body {
-    @apply bg-dark-950 text-slate-200 font-body antialiased;
-    background-image:
-      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(59,130,246,0.12) 0%, transparent 60%),
-      radial-gradient(ellipse 60% 40% at 80% 120%, rgba(56,189,248,0.06) 0%, transparent 60%);
-    background-attachment: fixed;
+    @apply text-gray-200 antialiased;
+    background-color: #0B0F19;
   }
 
   * {
@@ -42,55 +41,39 @@
 
 @layer components {
   .section-heading {
-    @apply font-display text-4xl md:text-5xl font-bold text-white mb-4;
+    @apply font-display text-3xl md:text-4xl font-bold text-gray-100 mb-4;
   }
 
   .section-subheading {
-    @apply text-slate-400 font-body text-lg max-w-2xl mx-auto;
+    @apply text-gray-400 font-body text-base max-w-2xl mx-auto;
   }
 
   .gradient-text {
-    @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, #3b82f6 0%, #38bdf8 50%, #3b82f6 100%);
-    background-size: 200%;
-    animation: gradientShift 4s ease infinite;
+    @apply text-blue-500;
   }
 
   .glass-card {
-    @apply rounded-2xl border border-white/5;
-    background: rgba(15, 23, 42, 0.4);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    @apply bg-[#111827] border border-gray-800/60 rounded-2xl;
   }
 
   .glow-border {
-    @apply border border-primary-500/20;
-    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    @apply border border-gray-800/60 transition-colors duration-300;
   }
 
   .glow-border:hover {
-    @apply border-primary-500/40;
-    box-shadow: 0 0 30px rgba(59,130,246,0.15), inset 0 0 20px rgba(59,130,246,0.05);
+    @apply border-gray-700 shadow-lg shadow-black/20;
   }
 
   .btn-primary {
-    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl font-display font-semibold text-sm
-           bg-primary-500 text-white transition-all duration-300
-           hover:bg-primary-400 hover:shadow-lg hover:shadow-primary-500/25 hover:-translate-y-0.5
-           active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-primary-500/50;
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors;
   }
 
   .btn-outline {
-    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl font-display font-semibold text-sm
-           border border-primary-500/50 text-primary-400 transition-all duration-300
-           hover:border-primary-400 hover:text-primary-300 hover:bg-primary-500/10 hover:-translate-y-0.5
-           active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-primary-500/50;
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-gray-700 text-gray-300 hover:bg-gray-800 hover:text-white transition-colors;
   }
 
   .tag {
-    @apply text-xs font-mono px-3 py-1 rounded-full
-           bg-primary-500/10 text-primary-400 border border-primary-500/20;
+    @apply px-2.5 py-1 rounded-md bg-[#0B0F19] border border-gray-800/60 font-mono text-xs text-gray-300;
   }
 
   .nav-link {
@@ -123,9 +106,4 @@
     z-index: 1;
     border-radius: inherit;
   }
-}
-
-@keyframes gradientShift {
-  0%,100% { background-position: 0% 50%; }
-  50%      { background-position: 100% 50%; }
 }
