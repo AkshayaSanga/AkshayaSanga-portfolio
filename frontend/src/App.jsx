@@ -24,7 +24,9 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-dark-950 relative overflow-x-hidden">
-      {/* Dynamic Mouse Spotlight */}
+      {/* Hero glow from top */}
+      <div className="pointer-events-none fixed inset-0 z-0 bg-hero-glow" />
+
       <div 
         className="pointer-events-none fixed inset-0 z-0 transition-opacity duration-300"
         style={{
