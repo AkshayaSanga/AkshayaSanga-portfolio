@@ -1,4 +1,4 @@
-import { AnimatePresence, motion, useScroll, useSpring } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { HiMenuAlt3, HiX } from 'react-icons/hi'
 
@@ -13,35 +13,27 @@ const NAV_LINKS = [
 ]
 
 export default function Navbar() {
-  const [scrolled,  setScrolled]  = useState(false)
-  const [menuOpen,  setMenuOpen]  = useState(false)
-  const [active,    setActive]    = useState('')
-
-  const { scrollYProgress } = useScroll()
-  const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 })
+  const [scrolled, setScrolled] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [active,   setActive]   = useState('')
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40)
+    const onScroll = () => setScrolled(window.scrollY > 30)
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
   useEffect(() => {
-    const sections = NAV_LINKS.map(l => l.href.slice(1))
+    const ids = NAV_LINKS.map(l => l.href.slice(1))
     const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(e => { if (e.isIntersecting) setActive(e.target.id) })
-      },
+      entries => entries.forEach(e => { if (e.isIntersecting) setActive(e.target.id) }),
       { rootMargin: '-40% 0px -55% 0px' }
     )
-    sections.forEach(id => {
-      const el = document.getElementById(id)
-      if (el) observer.observe(el)
-    })
+    ids.forEach(id => { const el = document.getElementById(id); if (el) observer.observe(el) })
     return () => observer.disconnect()
   }, [])
 
-  const handleNavClick = (e, href) => {
+  const handleClick = (e, href) => {
     e.preventDefault()
     setMenuOpen(false)
     document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' })
@@ -50,37 +42,31 @@ export default function Navbar() {
   return (
     <>
       <motion.header
-        initial={{ y: -80, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, ease: 'easeOut' }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.4 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? 'py-3 bg-[#0B0F19]/80 backdrop-blur-md border-b border-gray-800/60'
-            : 'py-5'
+          scrolled ? 'py-3 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm shadow-slate-100/50' : 'py-5'
         }`}
       >
-        {/* Scroll Progress Bar */}
-        <motion.div className="absolute top-0 left-0 right-0 h-[2px] bg-blue-500 origin-left z-50" style={{ scaleX }} />
-
-        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        <nav className="max-w-6xl mx-auto px-6 flex items-center justify-between">
           {/* Logo */}
           <a
             href="#"
-            onClick={e => handleNavClick(e, '#hero')}
-            className="font-display text-xl font-bold group"
+            onClick={e => handleClick(e, '#hero')}
+            className="font-bold text-slate-900 text-sm tracking-tight hover:text-blue-600 transition-colors"
           >
-            <span className="text-gray-100 group-hover:text-blue-400 transition-colors duration-200">AS</span>
-            <span className="text-blue-500">.</span>
+            Akshaya Sanga
           </a>
 
           {/* Desktop links */}
-          <ul className="hidden md:flex items-center gap-8">
+          <ul className="hidden md:flex items-center gap-7">
             {NAV_LINKS.map(link => (
               <li key={link.href}>
                 <a
                   href={link.href}
-                  onClick={e => handleNavClick(e, link.href)}
-                  className={`text-sm font-medium transition-colors ${active === link.href.slice(1) ? 'text-blue-400' : 'text-gray-400 hover:text-gray-200'}`}
+                  onClick={e => handleClick(e, link.href)}
+                  className={`nav-link ${active === link.href.slice(1) ? 'active !text-blue-600 font-semibold' : ''}`}
                 >
                   {link.label}
                 </a>
@@ -88,12 +74,12 @@ export default function Navbar() {
             ))}
           </ul>
 
-          {/* CTA */}
+          {/* Resume button */}
           <a
             href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden md:inline-flex text-xs px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors"
+            className="hidden md:inline-flex btn-primary text-xs px-4 py-2 rounded-lg"
           >
             Resume
           </a>
@@ -101,10 +87,10 @@ export default function Navbar() {
           {/* Mobile toggle */}
           <button
             onClick={() => setMenuOpen(o => !o)}
-            className="md:hidden text-gray-300 hover:text-blue-400 transition-colors p-1"
+            className="md:hidden text-slate-500 hover:text-slate-900 transition-colors"
             aria-label="Toggle menu"
           >
-            {menuOpen ? <HiX size={24} /> : <HiMenuAlt3 size={24} />}
+            {menuOpen ? <HiX size={20} /> : <HiMenuAlt3 size={20} />}
           </button>
         </nav>
       </motion.header>
@@ -113,36 +99,28 @@ export default function Navbar() {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1,  y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.25 }}
-            className="fixed inset-x-0 top-[60px] z-40 md:hidden"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-x-0 top-[56px] z-40 md:hidden px-4"
           >
-            <div className="mx-4 rounded-2xl bg-[#111827] border border-gray-800/60 shadow-xl overflow-hidden">
-              <ul className="flex flex-col divide-y divide-gray-800/60">
-                {NAV_LINKS.map((link, i) => (
-                  <motion.li
-                    key={link.href}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1,  x: 0 }}
-                    transition={{ delay: i * 0.06 }}
-                  >
-                    <a
-                      href={link.href}
-                      onClick={e => handleNavClick(e, link.href)}
-                      className="flex items-center px-6 py-4 text-gray-300 hover:text-blue-400 hover:bg-[#0B0F19] transition-all duration-200 font-body"
-                    >
-                      {link.label}
-                    </a>
-                  </motion.li>
-                ))}
-                <li className="p-4">
-                  <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="flex justify-center w-full py-2.5 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 transition-colors">
-                    Download Resume
-                  </a>
-                </li>
-              </ul>
+            <div className="rounded-xl bg-white border border-slate-200/80 overflow-hidden shadow-2xl shadow-slate-200/40">
+              {NAV_LINKS.map(link => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={e => handleClick(e, link.href)}
+                  className="flex items-center px-5 py-3.5 text-sm text-slate-600 hover:text-blue-600 hover:bg-slate-50 border-b border-slate-100 last:border-0 transition-colors"
+                >
+                  {link.label}
+                </a>
+              ))}
+              <div className="p-4">
+                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="btn-primary w-full justify-center text-xs py-2.5">
+                  Download Resume
+                </a>
+              </div>
             </div>
           </motion.div>
         )}

@@ -7,6 +7,30 @@ import { useInView } from 'react-intersection-observer'
 const PROJECTS = [
   {
     id: 1,
+    title: 'MetroVision',
+    description: 'A full-stack Smart City Operations Platform with dashboards, complaints management, GIS command center mapping, emergency alerts, and role-based administration.',
+    tags: ['Next.js', 'FastAPI', 'PostgreSQL', 'Leaflet', 'TypeScript', 'Python'],
+    github: 'https://github.com/AkshayaSanga/MetroVision',
+    demo: 'https://urban-os-omega.vercel.app',
+    featured: true,
+    category: 'Software Dev',
+    gradient: 'from-blue-600/20 to-indigo-600/10',
+    accentColor: '#2563eb',
+  },
+  {
+    id: 2,
+    title: 'BackendForge API',
+    description: 'A production-ready, API-first backend template with JWT auth, role-based access control, file uploads, Redis caching, Alembic database migrations, and unit testing.',
+    tags: ['FastAPI', 'Python', 'PostgreSQL', 'Redis', 'Docker', 'Alembic', 'Pytest'],
+    github: 'https://github.com/AkshayaSanga/backendforge-api',
+    demo: '',
+    featured: true,
+    category: 'Software Dev',
+    gradient: 'from-indigo-600/20 to-purple-600/10',
+    accentColor: '#7c3aed',
+  },
+  {
+    id: 3,
     title: 'AI-Based Retail Analytics',
     description: 'Built a full-stack retail analytics platform with interactive dashboards, data visualization, and machine learning-based sales forecasting.',
     tags: ['Python', 'SQL', 'Machine Learning', 'Power BI'],
@@ -18,7 +42,7 @@ const PROJECTS = [
     accentColor: '#3b82f6',
   },
   {
-    id: 2,
+    id: 4,
     title: 'Credit Risk Analysis System',
     description: 'Developed a predictive credit risk assessment system using classification algorithms. Integrated model explainability and robust backend logic to enhance financial decision-making.',
     tags: ['Python', 'Machine Learning', 'Data Science'],
@@ -30,19 +54,7 @@ const PROJECTS = [
     accentColor: '#3b82f6',
   },
   {
-    id: 3,
-    title: 'Stock Market Dashboard',
-    description: 'Engineered an interactive stock market dashboard to analyze financial trends. Processed historical data via Python to build a responsive, data-driven UI for pattern identification.',
-    tags: ['Python', 'Data Visualization', 'Pandas'],
-    github: 'https://github.com/AkshayaSanga/Stock-Market-Analytics-Dashboard',
-    demo: '', 
-    featured: false,
-    category: 'Data Analytics',
-    gradient: 'from-sky-600/20 to-blue-500/10',
-    accentColor: '#0ea5e9',
-  },
-  {
-    id: 4,
+    id: 5,
     title: 'CareerForge AI',
     description: 'An intelligent tool built with TypeScript to help streamline career progression and technical development.',
     tags: ['TypeScript', 'AI', 'Web'],
@@ -54,16 +66,16 @@ const PROJECTS = [
     accentColor: '#4f46e5',
   },
   {
-    id: 5,
+    id: 6,
     title: 'Dev Portfolio Hub',
-    description: 'My personal developer portfolio featuring a modern dark theme, Framer Motion animations, a working backend contact form, and a fully responsive layout.',
+    description: 'My personal developer portfolio featuring a modern classic light theme, Framer Motion animations, a working backend contact form, and a fully responsive layout.',
     tags: ['React', 'Tailwind', 'Node.js', 'MongoDB'],
     github: 'https://github.com/AkshayaSanga/AkshayaSanga-portfolio',
     demo: 'https://akshayasanga.vercel.app',
     featured: false,
     category: 'Software Dev',
     gradient: 'from-blue-500/20 to-cyan-500/10',
-    accentColor: '#3b82f6',
+    accentColor: '#2563eb',
   },
 ]
 
@@ -105,7 +117,7 @@ export default function Projects() {
               className={`px-5 py-2 rounded-full font-body text-sm transition-all duration-300 ${
                 filter === cat
                   ? 'bg-blue-600 text-white shadow-sm'
-                  : 'bg-[#111827] border border-gray-800/60 text-gray-400 hover:text-blue-400 hover:border-gray-700'
+                  : 'bg-slate-50 border border-slate-200 text-slate-600 hover:text-blue-600 hover:border-slate-300'
               }`}
             >
               {cat}
@@ -139,46 +151,46 @@ function ProjectCard({ project, index, inView }) {
       initial={{ opacity: 0, y: 30 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay: index * 0.08 }}
-      className="bg-[#111827] border border-gray-800/60 rounded-2xl group flex flex-col overflow-hidden hover:-translate-y-1 hover:border-gray-700 hover:shadow-lg hover:shadow-black/20 transition-all duration-300"
+      className="bg-slate-50 border border-slate-200/60 rounded-2xl group flex flex-col overflow-hidden hover:-translate-y-1 hover:border-slate-300 hover:shadow-lg hover:shadow-slate-100/50 transition-all duration-300"
     >
       {/* Card header */}
-      <div className="h-32 bg-[#0B0F19]/50 flex items-center justify-center relative overflow-hidden border-b border-gray-800/60">
+      <div className="h-32 bg-slate-100/50 flex items-center justify-center relative overflow-hidden border-b border-slate-200/60">
         <div
-          className="absolute inset-0 opacity-20"
+          className="absolute inset-0 opacity-10"
           style={{
-            backgroundImage: 'linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.05) 50%, transparent 70%)',
+            backgroundImage: 'linear-gradient(45deg, transparent 30%, rgba(15,23,42,0.05) 50%, transparent 70%)',
           }}
         />
         <div className="text-center">
           <div
-            className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-2 font-display font-bold text-xl text-dark-950"
+            className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-2 font-display font-bold text-xl text-white shadow-sm"
             style={{ background: project.accentColor }}
           >
             {project.title.charAt(0)}
           </div>
         </div>
         {project.featured && (
-          <div className="absolute top-3 right-3 flex items-center gap-1 px-2 py-1 rounded-full bg-[#111827] border border-gray-800/60 shadow-sm">
-            <HiStar size={10} className="text-blue-400" />
-            <span className="font-mono text-xs text-blue-400">Featured</span>
+          <div className="absolute top-3 right-3 flex items-center gap-1 px-2 py-1 rounded-full bg-white border border-slate-200/80 shadow-sm animate-pulse">
+            <HiStar size={10} className="text-blue-600" />
+            <span className="font-mono text-xs text-blue-600">Featured</span>
           </div>
         )}
-        <div className="absolute top-3 left-3 px-2 py-1 rounded-full bg-[#111827] border border-gray-800/60 font-mono text-[10px] text-gray-400 uppercase tracking-wider">{project.category}</div>
+        <div className="absolute top-3 left-3 px-2 py-1 rounded-full bg-white border border-slate-200/80 font-mono text-[10px] text-slate-500 uppercase tracking-wider">{project.category}</div>
       </div>
 
       {/* Card body */}
       <div className="p-6 flex flex-col flex-1">
-        <h3 className="font-display font-bold text-gray-100 text-lg mb-2 group-hover:text-blue-400 transition-colors duration-200">
+        <h3 className="font-display font-bold text-slate-900 text-lg mb-2 group-hover:text-blue-600 transition-colors duration-200">
           {project.title}
         </h3>
-        <p className="font-body text-gray-400 text-sm leading-relaxed flex-1 mb-6">
+        <p className="font-body text-slate-600 text-sm leading-relaxed flex-1 mb-6">
           {project.description}
         </p>
 
         {/* Tags */}
         <div className="flex flex-wrap gap-2 mb-5">
           {project.tags.map(tag => (
-            <span key={tag} className="px-2.5 py-1 rounded-md bg-[#0B0F19] border border-gray-800/60 font-mono text-xs text-gray-300">
+            <span key={tag} className="px-2.5 py-1 rounded-md bg-white border border-slate-200/80 font-mono text-xs text-slate-600">
               {tag}
             </span>
           ))}
@@ -191,7 +203,7 @@ function ProjectCard({ project, index, inView }) {
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 flex items-center justify-center gap-2 text-xs py-2.5 px-4 rounded-lg border border-gray-700 text-gray-300 hover:bg-gray-800 hover:text-white transition-colors"
+              className="flex-1 flex items-center justify-center gap-2 text-xs py-2.5 px-4 rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors"
             >
               <FaGithub size={14} /> Code
             </a>

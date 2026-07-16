@@ -9,7 +9,7 @@ const PROFILES = [
     handle: '@AkshayaSanga',
     url: 'https://github.com/AkshayaSanga',
     icon: FaGithub,
-    color: '#94a3b8',
+    color: '#0f172a',
     bg: 'from-slate-700/30 to-slate-800/20',
     stats: [
       { label: 'Contributions', value: '90+ GitHub Contributions' },
@@ -107,38 +107,38 @@ export default function CodingProfiles() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="bg-[#111827] border border-gray-800/60 rounded-2xl group p-6 flex flex-col hover:-translate-y-1 hover:border-gray-700 hover:shadow-lg hover:shadow-black/20 transition-all duration-300 cursor-pointer"
+                className="bg-slate-50 border border-slate-200/60 rounded-2xl group p-6 flex flex-col hover:-translate-y-1 hover:border-slate-300 hover:shadow-lg hover:shadow-slate-100/50 transition-all duration-300 cursor-pointer"
               >
                 {/* Profile header */}
                 <div className="flex items-center gap-4 mb-4">
                   <div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center bg-[#0B0F19] border border-gray-800/60"
+                    className="w-12 h-12 rounded-xl flex items-center justify-center bg-white border border-slate-200"
                   >
                     <Icon size={26} style={{ color: profile.color }} />
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center gap-2">
-                      <h3 className="font-display font-semibold text-gray-100 text-lg group-hover:text-blue-400 transition-colors">
+                      <h3 className="font-display font-semibold text-slate-900 text-lg group-hover:text-blue-600 transition-colors">
                         {profile.name}
                       </h3>
                       <FaExternalLinkAlt
                         size={10}
-                        className="text-gray-600 group-hover:text-blue-400 transition-colors group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+                        className="text-slate-400 group-hover:text-blue-600 transition-colors group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
                       />
                     </div>
                     <p className="font-mono text-xs text-slate-500">{profile.handle}</p>
                   </div>
                 </div>
 
-                <p className="font-body text-gray-400 text-sm leading-relaxed mb-6 flex-1">
+                <p className="font-body text-slate-600 text-sm leading-relaxed mb-6 flex-1">
                   {profile.description}
                 </p>
 
                 {/* Stats */}
                 <div className="mt-auto">
                   {profile.stats.map(stat => (
-                    <div key={stat.label} className="w-full text-center py-2.5 rounded-xl bg-[#0B0F19]/50 border border-gray-800/60">
-                      <span className="font-display font-medium text-sm text-gray-300">{stat.value}</span>
+                    <div key={stat.label} className="w-full text-center py-2.5 rounded-xl bg-white border border-slate-200">
+                      <span className="font-display font-medium text-sm text-slate-800">{stat.value}</span>
                     </div>
                   ))}
                 </div>

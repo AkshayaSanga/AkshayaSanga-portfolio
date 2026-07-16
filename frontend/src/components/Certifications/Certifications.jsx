@@ -137,7 +137,7 @@ export default function Certifications() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="bg-[#111827] border border-gray-800/60 rounded-2xl group hover:-translate-y-1 hover:border-gray-700 hover:shadow-lg hover:shadow-black/20 transition-all duration-300 overflow-hidden"
+                className="bg-slate-50 border border-slate-200/60 rounded-2xl group hover:-translate-y-1 hover:border-slate-300 hover:shadow-lg hover:shadow-slate-100/50 transition-all duration-300 overflow-hidden shadow-sm"
               >
                 {/* Top gradient strip */}
                 <div className="h-1.5" style={{ background: cert.color }} />
@@ -146,32 +146,32 @@ export default function Certifications() {
                   {/* Header */}
                   <div className="flex items-start gap-4 mb-4">
                     <div
-                      className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-[#0B0F19] border border-gray-800/60"
+                      className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-white border border-slate-200"
                     >
                       {Icon
-                        ? <Icon size={22} style={{ color: cert.color }} />
-                        : <span className="font-display font-bold text-sm" style={{ color: cert.color }}>{cert.iconText}</span>
+                        ? <Icon size={22} style={{ color: cert.color === '#ffffff' ? '#0f172a' : cert.color }} />
+                        : <span className="font-display font-bold text-sm" style={{ color: cert.color === '#ffffff' ? '#0f172a' : cert.color }}>{cert.iconText}</span>
                       }
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h3 className="font-display font-semibold text-gray-100 text-base leading-tight mb-1 group-hover:text-blue-400 transition-colors">
+                      <h3 className="font-display font-semibold text-slate-900 text-base leading-tight mb-1 group-hover:text-blue-600 transition-colors">
                         {cert.title}
                       </h3>
-                      <p className="font-body text-gray-400 text-xs">{cert.issuer}</p>
+                      <p className="font-body text-slate-500 text-xs">{cert.issuer}</p>
                     </div>
                   </div>
 
                   {/* Meta */}
                   <div className="flex items-center gap-3 mb-4">
-                    <HiBadgeCheck size={16} className="text-blue-500 flex-shrink-0" />
-                    <span className="font-mono text-xs text-gray-500">Issued: {cert.date}</span>
-                    <span className="ml-auto font-mono text-xs text-gray-600">{cert.credential}</span>
+                    <HiBadgeCheck size={16} className="text-blue-600 flex-shrink-0" />
+                    <span className="font-mono text-xs text-slate-500">Issued: {cert.date}</span>
+                    <span className="ml-auto font-mono text-xs text-slate-400">{cert.credential}</span>
                   </div>
 
                   {/* Skills */}
                   <div className="flex flex-wrap gap-1.5 mb-5">
                     {cert.skills.map(s => (
-                      <span key={s} className="px-2.5 py-1 rounded-md bg-[#0B0F19] border border-gray-800/60 font-mono text-xs text-gray-300">{s}</span>
+                      <span key={s} className="px-2.5 py-1 rounded-md bg-white border border-slate-200/80 font-mono text-xs text-slate-600">{s}</span>
                     ))}
                   </div>
 
@@ -181,7 +181,7 @@ export default function Certifications() {
                       href={cert.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 font-medium text-xs text-blue-400 hover:text-blue-300 transition-colors group/link"
+                      className="flex items-center gap-2 font-medium text-xs text-blue-600 hover:text-blue-700 transition-colors group/link"
                     >
                       View Credential
                       <HiExternalLink size={12} className="group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
