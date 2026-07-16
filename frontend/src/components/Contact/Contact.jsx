@@ -4,7 +4,7 @@ import { useState } from 'react'
 import toast from 'react-hot-toast'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import { FaXTwitter } from 'react-icons/fa6'
-import { HiLocationMarker, HiMail, HiPaperAirplane } from 'react-icons/hi'
+import { HiClipboardCopy, HiLocationMarker, HiMail, HiPaperAirplane } from 'react-icons/hi'
 import { useInView } from 'react-intersection-observer'
 
 const CONTACT_INFO = [
@@ -38,6 +38,10 @@ export default function Contact() {
       toast.error('Please enter a valid email address.')
       return
     }
+    if (message.trim().length < 10) {
+      toast.error('Message must be at least 10 characters long.')
+      return
+    }
     setLoading(true)
     try {
       const API_URL = import.meta.env.VITE_API_URL || ''
@@ -51,6 +55,11 @@ export default function Contact() {
     }
   }
 
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText('sangaakshaya7@gmail.com')
+    toast.success('Email copied to clipboard!', { id: 'copy-toast' })
+  }
+
   return (
     <section id="contact" className="py-28 px-4" ref={ref}>
       <div className="max-w-7xl mx-auto">
@@ -60,7 +69,7 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="font-mono text-primary-400 text-sm tracking-widest uppercase mb-3">Let's connect</p>
+          <p className="font-mono text-slate-500 text-sm tracking-widest uppercase mb-3">Let's connect</p>
           <h2 className="section-heading">Get In <span className="gradient-text">Touch</span></h2>
           <p className="section-subheading">Have a project in mind or just want to say hi? I'd love to hear from you.</p>
         </motion.div>
@@ -74,17 +83,23 @@ export default function Contact() {
             className="lg:col-span-2 space-y-6"
           >
             <div className="bg-slate-50 border border-slate-200/60 rounded-2xl p-8 shadow-sm">
-              <h3 className="font-display font-semibold text-slate-900 text-xl mb-6">Contact Information</h3>
+              <h3 className="font-display font-semibold text-slate-800 text-xl mb-6">Contact Information</h3>
               <div className="space-y-5">
                 {CONTACT_INFO.map(({ icon: Icon, label, value, href }) => (
                   <div key={label} className="flex items-start gap-4 group">
-                    <div className="p-2.5 rounded-xl bg-white border border-slate-200 text-slate-500 flex-shrink-0 group-hover:border-slate-300 group-hover:text-blue-600 transition-colors">
+                    <div className="p-2.5 rounded-xl bg-white border border-slate-200 text-slate-500 flex-shrink-0 group-hover:border-slate-300 group-hover:text-primary-600 transition-colors">
                       <Icon size={16} />
                     </div>
                     <div>
                       <p className="font-mono text-xs text-slate-500 mb-0.5">{label}</p>
-                      {href
-                        ? <a href={href} className="font-body text-slate-700 hover:text-blue-600 transition-colors text-sm">{value}</a>
+                      {href ? (
+                        <div className="flex items-center gap-2">
+                          <a href={href} className="font-body text-slate-700 hover:text-primary-600 transition-colors text-sm">{value}</a>
+                          <button onClick={handleCopyEmail} className="text-slate-400 hover:text-primary-600 transition-colors" aria-label="Copy email">
+                            <HiClipboardCopy size={14} />
+                          </button>
+                        </div>
+                      )
                         : <p className="font-body text-slate-700 text-sm">{value}</p>
                       }
                     </div>
@@ -102,7 +117,7 @@ export default function Contact() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={label}
-                      className="p-3 rounded-xl border border-slate-200 bg-white text-slate-500 hover:text-blue-600 hover:border-slate-300 shadow-sm transition-all duration-300 hover:-translate-y-0.5"
+                      className="p-3 rounded-xl border border-slate-200 bg-white text-slate-500 hover:text-primary-600 hover:border-slate-300 shadow-sm transition-all duration-300 hover:-translate-y-0.5"
                     >
                       <Icon size={18} />
                     </a>
@@ -114,11 +129,11 @@ export default function Contact() {
             {/* Availability card */}
             <div className="bg-slate-50 border border-slate-200/60 rounded-2xl p-6 shadow-sm">
               <div className="flex items-center gap-3 mb-3">
-                <span className="w-2.5 h-2.5 rounded-full bg-blue-600 animate-pulse" />
+                <span className="w-2.5 h-2.5 rounded-full bg-primary-500 animate-pulse" />
                 <span className="font-display font-medium text-slate-800 text-sm">Currently Available</span>
               </div>
               <p className="font-body text-slate-600 text-sm leading-relaxed">
-                Open to full-time roles, freelance projects, and interesting collaborations. Response within 24–48 hours.
+                Open to full-time roles, internships, and interesting collaborations. Response within 24–48 hours.
               </p>
             </div>
           </motion.div>
@@ -131,7 +146,7 @@ export default function Contact() {
             className="lg:col-span-3"
           >
             <div className="bg-slate-50 border border-slate-200/60 rounded-2xl p-8 shadow-sm">
-              <h3 className="font-display font-semibold text-slate-900 text-xl mb-6">Send a Message</h3>
+              <h3 className="font-display font-semibold text-slate-800 text-xl mb-6">Send a Message</h3>
               <form onSubmit={handleSubmit} className="space-y-5" noValidate>
                 <div className="grid sm:grid-cols-2 gap-5">
                   <FormField
@@ -167,7 +182,7 @@ export default function Contact() {
                     name="message"
                     value={form.message}
                     onChange={handleChange}
-                    rows={5}
+                    rows={4}
                     placeholder="Tell me about your project or opportunity..."
                     className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-slate-800 placeholder-slate-400 font-body text-sm
                                focus:outline-none focus:border-blue-600/50 focus:ring-1 focus:ring-blue-600/20
@@ -178,7 +193,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0 group"
+                  className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl bg-slate-900 text-white font-medium hover:bg-slate-800 transition-colors disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0 group"
                 >
                   {loading ? (
                     <>

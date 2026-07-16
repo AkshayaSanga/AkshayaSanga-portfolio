@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "title": "MetroVision",
+    "description": "A full-stack Smart City Operations Platform with dashboards, complaints management, GIS command center mapping, emergency alerts, and role-based administration.",
+    "tags": ["Next.js", "FastAPI", "PostgreSQL", "Leaflet", "TypeScript", "Python"],
+    "github": "https://github.com/AkshayaSanga/MetroVision",
+    "demo": "https://metro-vision-pi.vercel.app/",
+    "featured": true,
+    "category": "Software Dev",
+    "accentColor": "#2563eb"
+  },
+  {
+    "id": 2,
+    "title": "BackendForge API",
+    "description": "A production-ready, API-first backend template with JWT auth, role-based access control, file uploads, Redis caching, Alembic database migrations, and unit testing.",
+    "tags": ["FastAPI", "Python", "PostgreSQL", "Redis", "Docker", "Alembic", "Pytest"],
+    "github": "https://github.com/AkshayaSanga/backendforge-api",
+    "demo": "https://backend-forge.onrender.com/docs",
+    "featured": true,
+    "category": "Software Dev",
+    "accentColor": "#2563eb"
+  },
+  {
+    "id": 3,
+    "title": "AI-Based Retail Analytics",
+    "description": "Built a full-stack retail analytics platform with interactive dashboards, data visualization, and machine learning-based sales forecasting.",
+    "tags": ["Python", "SQL", "Machine Learning", "Power BI"],
+    "github": "https://github.com/AkshayaSanga/ai-retail-analytics-platform",
+    "demo": "https://app.powerbi.com/view?r=eyJrIjoiYjM4YjI3MDMtYjM5NC00ZGUyLWE4Y2YtYjQ0ZGY1YjM4YjE4IiwidCI6ImNmZDE5OTk5LTFhYjQtNDg4MC1hZTBmLTAxM2YwYjA0YjYyMyJ9",
+    "featured": true,
+    "category": "Data Analytics",
+    "accentColor": "#14b8a6"
+  },
+  {
+    "id": 4,
+    "title": "Credit Risk Analysis System",
+    "description": "Developed a predictive credit risk assessment system using classification algorithms. Integrated model explainability and robust backend logic to enhance financial decision-making.",
+    "tags": ["Python", "Machine Learning", "Data Science"],
+    "github": "https://github.com/AkshayaSanga/credit-risk-analysis-system",
+    "demo": "https://github.com/AkshayaSanga/credit-risk-analysis-system/blob/main/Credit_Risk_Analysis.ipynb",
+    "featured": true,
+    "category": "Data Analytics",
+    "accentColor": "#14b8a6"
+  },
+  {
+    "id": 5,
+    "title": "CareerForge AI",
+    "description": "An intelligent tool built with TypeScript to help streamline career progression and technical development.",
+    "tags": ["TypeScript", "AI", "Web"],
+    "github": "https://github.com/AkshayaSanga/careerforge-ai",
+    "demo": "",
+    "featured": false,
+    "category": "Software Dev",
+    "accentColor": "#2563eb"
+  },
+  {
+    "id": 6,
+    "title": "Dev Portfolio Hub",
+    "description": "My personal developer portfolio featuring a modern classic light theme, Framer Motion animations, a working backend contact form, and a fully responsive layout.",
+    "tags": ["React", "Tailwind", "Node.js", "MongoDB"],
+    "github": "https://github.com/AkshayaSanga/AkshayaSanga-portfolio",
+    "demo": "https://akshayasanga.vercel.app",
+    "featured": false,
+    "category": "Software Dev",
+    "accentColor": "#2563eb"
+  }
+]

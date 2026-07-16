@@ -10,12 +10,28 @@ const SOCIAL_LINKS = [
 ]
 
 const container = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.1 } },
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.05, delayChildren: 0.1 },
+  },
 }
 const item = {
   hidden: { opacity: 0, y: 20 },
   show:   { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } },
+}
+
+// Variants for the name character animation
+const nameContainer = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.04, delayChildren: 0.2 },
+  },
+}
+const nameChar = {
+  hidden: { opacity: 0, y: 20 },
+  show:   { opacity: 1, y: 0, transition: { duration: 0.4, ease: 'easeOut' } },
 }
 
 export default function Hero() {
@@ -32,24 +48,27 @@ export default function Hero() {
       >
         {/* Status badge */}
         <motion.div variants={item} className="inline-flex items-center gap-2 mb-8">
-          <span className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse" />
+          <span className="w-1.5 h-1.5 rounded-full bg-primary-500 animate-pulse" />
           <span className="font-mono text-[11px] text-slate-500 tracking-widest uppercase">
-            Available for internships & SDE roles
+            Open to Internship & Full-Time Roles
           </span>
         </motion.div>
 
         {/* Name */}
         <motion.h1
-          variants={item}
-          className="text-5xl sm:text-6xl md:text-7xl font-bold text-slate-900 tracking-[-0.04em] leading-[1.05] mb-5"
+          variants={nameContainer}
+          className="text-5xl sm:text-6xl md:text-7xl font-bold font-display tracking-tight leading-[1.05] mb-5 gradient-text"
         >
-          Akshaya Sanga
+          {Array.from("Akshaya Sanga").map((char, i) => (
+            <motion.span key={i} variants={nameChar} className="inline-block">
+              {char === " " ? "\u00A0" : char}
+            </motion.span>
+          ))}
         </motion.h1>
-
         {/* Role */}
         <motion.p
           variants={item}
-          className="text-base md:text-lg font-medium text-blue-600 tracking-[-0.01em] mb-3"
+          className="text-base md:text-lg font-medium text-slate-600 tracking-[-0.01em] mb-3"
         >
           Software Engineer · Full-Stack Developer · AI Developer
         </motion.p>
@@ -59,8 +78,8 @@ export default function Hero() {
           variants={item}
           className="text-sm text-slate-500 max-w-md mx-auto leading-relaxed mb-10"
         >
-          Final-year B.Tech CSE student with CGPA 8.4, building scalable web & AI applications.
-          202 LeetCode problems solved. IBM SkillsBuild AI Intern.
+          Final-year CS student (CGPA 8.4) specializing in full-stack development and AI.
+          Proven problem-solver with 200+ LeetCode solutions.
         </motion.p>
 
         {/* CTA Buttons */}
@@ -85,19 +104,20 @@ export default function Hero() {
         {/* Social links */}
         <motion.div variants={item} className="flex items-center justify-center gap-3">
           {SOCIAL_LINKS.map(({ icon: Icon, href, label }) => (
-            <a
+            <motion.a
               key={label}
               href={href}
               target="_blank"
               rel="noopener noreferrer"
               aria-label={label}
+              whileHover={{ y: -3, scale: 1.1 }}
+              transition={{ duration: 0.2, ease: 'easeOut' }}
               className="w-9 h-9 rounded-lg border border-slate-200 bg-white text-slate-400
                          hover:text-slate-900 hover:border-slate-300 shadow-sm
-                         flex items-center justify-center
-                         transition-all duration-200"
+                         flex items-center justify-center"
             >
               <Icon size={15} />
-            </a>
+            </motion.a>
           ))}
         </motion.div>
       </motion.div>

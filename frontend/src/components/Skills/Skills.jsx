@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
-import { FaAws, FaChartBar, FaCss3Alt, FaDatabase, FaHtml5, FaJava, FaServer } from 'react-icons/fa'
+import { CgCPlusPlus } from 'react-icons/cg'
+import { FaAws, FaC, FaChartBar, FaCss3Alt, FaDatabase, FaHtml5, FaJava, FaServer } from 'react-icons/fa6'
 import {
   SiDocker,
   SiGit, SiGithub,
@@ -17,50 +18,60 @@ import { useInView } from 'react-intersection-observer'
 
 const SKILL_GROUPS = [
   {
-    category: 'Languages & Web',
-    color: 'from-blue-500/20 to-cyan-500/10',
-    accent: '#3b82f6',
+    category: 'Languages',
+    accent: '#4338ca', // Indigo
     skills: [
       { name: 'Python',      icon: SiPython,       level: 90, color: '#3776ab' },
       { name: 'Java',        icon: FaJava,         level: 85, color: '#e32c2e' },
       { name: 'JavaScript',  icon: SiJavascript,   level: 80, color: '#f7df1e' },
-      { name: 'React.js',    icon: SiReact,        level: 80, color: '#61dafb' },
+      { name: 'TypeScript',  icon: SiTypescript,   level: 75, color: '#3178c6' },
+      { name: 'C++',         icon: CgCPlusPlus,    level: 70, color: '#00599c' },
+      { name: 'C',           icon: FaC,            level: 70, color: '#a8b9cc' },
+    ],
+  },
+  {
+    category: 'Frontend Development',
+    accent: '#0d9488', // Teal
+    skills: [
+      { name: 'React.js',    icon: SiReact,        level: 85, color: '#61dafb' },
+      { name: 'Next.js',     icon: SiNextdotjs,    level: 70, color: '#0f172a' },
       { name: 'HTML5',       icon: FaHtml5,        level: 92, color: '#e34f26' },
       { name: 'CSS3',        icon: FaCss3Alt,      level: 88, color: '#264de4' },
     ],
   },
   {
-    category: 'Data Analytics & ML',
-    color: 'from-primary-500/20 to-emerald-500/10',
-    accent: '#1da967',
+    category: 'Backend & Databases',
+    accent: '#db2777', // Pink
+    skills: [
+      { name: 'Node.js',    icon: SiNodedotjs, level: 80, color: '#339933' },
+      { name: 'MongoDB',    icon: SiMongodb,   level: 80, color: '#47a248' },
+      { name: 'SQL',        icon: FaDatabase,  level: 85, color: '#336791' },
+    ],
+  },
+  {
+    category: 'AI, ML & Data Analytics',
+    accent: '#16a34a', // Green
     skills: [
       { name: 'Machine Learning', icon: FaChartBar, level: 85, color: '#1da967' },
-      { name: 'SQL',        icon: FaDatabase,  level: 85, color: '#336791' },
       { name: 'Power BI',   icon: FaChartBar,  level: 75, color: '#f2c811' },
       { name: 'Tableau',    icon: FaChartBar,  level: 70, color: '#e97627' },
-      { name: 'Node.js',    icon: SiNodedotjs, level: 75, color: '#339933' },
     ],
   },
   {
-    category: 'Tools & Ecosystem',
-    color: 'from-purple-500/20 to-pink-500/10',
-    accent: '#7c3aed',
+    category: 'Tools & DevOps',
+    accent: '#ca8a04', // Yellow
     skills: [
-      { name: 'Git',    icon: SiGit,    level: 88, color: '#f05032' },
-      { name: 'GitHub', icon: SiGithub, level: 87, color: '#0f172a' },
-      { name: 'MongoDB',icon: SiMongodb,level: 80, color: '#47a248' },
-      { name: 'Postman',icon: SiPostman,level: 80, color: '#ff6c37' },
-      { name: 'Vercel Deployment', icon: SiVercel, level: 80, color: '#0f172a' },
+      { name: 'Git',      icon: SiGit,      level: 88, color: '#f05032' },
+      { name: 'GitHub',   icon: SiGithub,   level: 87, color: '#0f172a' },
+      { name: 'Docker',   icon: SiDocker,   level: 75, color: '#2496ed' },
+      { name: 'Postman',  icon: SiPostman,  level: 80, color: '#ff6c37' },
+      { name: 'Vercel',   icon: SiVercel,   level: 80, color: '#0f172a' },
     ],
   },
   {
-    category: 'Currently Learning',
-    color: 'from-orange-500/20 to-yellow-500/10',
-    accent: '#f59e0b',
+    category: 'Exploring Next',
+    accent: '#64748b', // Slate
     skills: [
-      { name: 'Next.js',      icon: SiNextdotjs,         level: 0, color: '#0f172a' },
-      { name: 'TypeScript',   icon: SiTypescript,        level: 0, color: '#3178c6' },
-      { name: 'Docker',       icon: SiDocker,            level: 0, color: '#2496ed' },
       { name: 'AWS',          icon: FaAws,               level: 0, color: '#ff9900' },
       { name: 'System Design',icon: FaServer,            level: 0, color: '#94a3b8' },
     ],
@@ -115,7 +126,7 @@ export default function Skills() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="font-mono text-primary-400 text-sm tracking-widest uppercase mb-3">What I work with</p>
+          <p className="font-mono text-slate-500 text-sm tracking-widest uppercase mb-3">What I work with</p>
           <h2 className="section-heading">Tech <span className="gradient-text">Stack</span></h2>
           <p className="section-subheading">Technologies and tools I use to craft full-stack solutions</p>
         </motion.div>
@@ -134,7 +145,7 @@ export default function Skills() {
                     className="w-1 h-6 rounded-full"
                     style={{ background: group.accent }}
                   />
-                  <h3 className="font-display font-semibold text-slate-900 text-xl">{group.category}</h3>
+                  <h3 className="font-display font-semibold text-slate-800 text-xl">{group.category}</h3>
                 </div>
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-3">
                   {group.skills.map((skill, si) => (

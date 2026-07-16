@@ -27,7 +27,7 @@ export default function Navbar() {
     const ids = NAV_LINKS.map(l => l.href.slice(1))
     const observer = new IntersectionObserver(
       entries => entries.forEach(e => { if (e.isIntersecting) setActive(e.target.id) }),
-      { rootMargin: '-40% 0px -55% 0px' }
+      { rootMargin: '-30% 0px -70% 0px' } // Tweak to improve active section detection accuracy
     )
     ids.forEach(id => { const el = document.getElementById(id); if (el) observer.observe(el) })
     return () => observer.disconnect()
@@ -46,7 +46,7 @@ export default function Navbar() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.4 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled ? 'py-3 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm shadow-slate-100/50' : 'py-5'
+          scrolled ? 'py-3 bg-slate-50/80 backdrop-blur-md border-b border-slate-200/60 shadow-sm shadow-slate-100/50' : 'py-5'
         }`}
       >
         <nav className="max-w-6xl mx-auto px-6 flex items-center justify-between">
@@ -54,7 +54,7 @@ export default function Navbar() {
           <a
             href="#"
             onClick={e => handleClick(e, '#hero')}
-            className="font-bold text-slate-900 text-sm tracking-tight hover:text-blue-600 transition-colors"
+            className="font-bold text-slate-800 text-sm tracking-tight hover:text-primary-600 transition-colors"
           >
             Akshaya Sanga
           </a>
@@ -66,7 +66,7 @@ export default function Navbar() {
                 <a
                   href={link.href}
                   onClick={e => handleClick(e, link.href)}
-                  className={`nav-link ${active === link.href.slice(1) ? 'active !text-blue-600 font-semibold' : ''}`}
+                  className={`nav-link ${active === link.href.slice(1) ? 'active !text-primary-600 font-semibold' : ''}`}
                 >
                   {link.label}
                 </a>

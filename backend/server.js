@@ -17,11 +17,9 @@ connectDB()
 // ── Security middleware ───────────────────────────────────────────────────────
 app.use(helmet())
 app.use(cors({
-  origin: [
-    process.env.FRONTEND_URL || 'http://localhost:3000',
-    'http://localhost:3001',
-    'http://localhost:5173',
-    'https://akshayasanga.vercel.app',
+  origin: [ // The frontend dev server runs on 5173
+    process.env.FRONTEND_URL || 'http://localhost:5173',
+    'https://akshayasanga.vercel.app', // Your production frontend
   ],
   methods: ['GET', 'POST', 'PATCH', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],

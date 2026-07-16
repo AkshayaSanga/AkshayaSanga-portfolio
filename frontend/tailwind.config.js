@@ -4,45 +4,24 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Pure professional blacks
-        zinc: {
-          950: '#09090b',
-          900: '#18181b',
-          800: '#27272a',
-          700: '#3f3f46',
-          600: '#52525b',
-          500: '#71717a',
-          400: '#a1a1aa',
-          300: '#d4d4d8',
-          200: '#e4e4e7',
-          100: '#f4f4f5',
-        },
-        // Single blue accent
-        blue: {
-          600: '#2563eb',
-          500: '#3b82f6',
-          400: '#60a5fa',
-          300: '#93c5fd',
-          200: '#bfdbfe',
-        },
-        // Premium corporate blue primary palette
+        // Classic blue color palette
         primary: {
           50: '#eff6ff',
           100: '#dbeafe',
           200: '#bfdbfe',
           300: '#93c5fd',
           400: '#60a5fa',
-          500: '#2563eb',
-          600: '#1d4ed8',
-          700: '#1e40af',
-          800: '#1e3a8a',
+          500: '#3b82f6',
+          600: '#2563eb',
+          700: '#1d4ed8',
+          800: '#1e40af',
           900: '#1e3a8a',
           950: '#172554',
         },
       },
       fontFamily: {
         sans:    ['"Inter"', 'system-ui', '-apple-system', 'sans-serif'],
-        display: ['"Inter"', 'system-ui', '-apple-system', 'sans-serif'],
+        display: ['"Playfair Display"', 'serif'],
         body:    ['"Inter"', 'system-ui', '-apple-system', 'sans-serif'],
         mono:    ['"JetBrains Mono"', 'monospace'],
       },

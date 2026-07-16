@@ -8,8 +8,8 @@ const CERTIFICATIONS = [
   {
     id: 1,
     title: 'Web Development Fundamentals',
-    issuer: 'IBM',
-    date: 'Apr 2026',
+    issuer: 'IBM SkillsBuild',
+    date: 'Apr 2024',
     credential: 'IBM SkillsBuild',
     link: '#',
     icon: null,
@@ -20,8 +20,8 @@ const CERTIFICATIONS = [
   {
     id: 2,
     title: 'Generative AI for Data Science',
-    issuer: 'Microsoft',
-    date: 'Sep 2025',
+    issuer: 'Microsoft Learn',
+    date: 'Sep 2023',
     credential: 'SK7OFUFSFJ2K',
     link: '#',
     icon: FaMicrosoft,
@@ -32,7 +32,7 @@ const CERTIFICATIONS = [
     id: 3,
     title: 'Introduction to Generative AI',
     issuer: 'Google Cloud',
-    date: 'Sep 2025',
+    date: 'Sep 2023',
     credential: 'USPOUGPNB6K7',
     link: '#',
     icon: SiGooglecloud,
@@ -42,8 +42,8 @@ const CERTIFICATIONS = [
   {
     id: 4,
     title: 'Artificial Intelligence Fundamentals',
-    issuer: 'IBM',
-    date: 'Sep 2025',
+    issuer: 'IBM SkillsBuild',
+    date: 'Aug 2023',
     credential: 'IBM SkillsBuild',
     link: '#',
     icon: null,
@@ -55,7 +55,7 @@ const CERTIFICATIONS = [
     id: 5,
     title: 'Docker Essentials: A Developer Introduction',
     issuer: 'Cognitive Class',
-    date: 'Sep 2025',
+    date: 'Jul 2023',
     credential: 'd82b8550e60243d080ab612e5ff21019',
     link: '#',
     icon: SiDocker,
@@ -66,7 +66,7 @@ const CERTIFICATIONS = [
     id: 6,
     title: 'SQL and Relational Databases 101',
     issuer: 'Cognitive Class',
-    date: 'Sep 2025',
+    date: 'Jun 2023',
     credential: '04838b2e167740128d640effc34fd013',
     link: '#',
     icon: FaDatabase,
@@ -77,7 +77,7 @@ const CERTIFICATIONS = [
     id: 7,
     title: 'AI For Everyone',
     issuer: 'DeepLearning.AI',
-    date: 'Sep 2025',
+    date: 'May 2023',
     credential: 'RNGPF5SU50WZ',
     link: '#',
     icon: null,
@@ -89,7 +89,7 @@ const CERTIFICATIONS = [
     id: 8,
     title: 'Machine Learning for All',
     issuer: 'University of London',
-    date: 'Sep 2025',
+    date: 'May 2023',
     credential: '2G7QIYWF5EWO',
     link: '#',
     icon: null,
@@ -100,8 +100,8 @@ const CERTIFICATIONS = [
   {
     id: 9,
     title: 'Excel Basics for Data Analysis',
-    issuer: 'IBM',
-    date: 'Sep 2025',
+    issuer: 'IBM SkillsBuild',
+    date: 'Apr 2023',
     credential: 'T0M8I4M204DO',
     link: '#',
     icon: null,
@@ -123,7 +123,7 @@ export default function Certifications() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="font-mono text-primary-400 text-sm tracking-widest uppercase mb-3">Credentials</p>
+          <p className="font-mono text-slate-500 text-sm tracking-widest uppercase mb-3">Credentials</p>
           <h2 className="section-heading">Certi<span className="gradient-text">fications</span></h2>
           <p className="section-subheading">Industry-recognized certifications validating my technical expertise</p>
         </motion.div>
@@ -137,7 +137,7 @@ export default function Certifications() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="bg-slate-50 border border-slate-200/60 rounded-2xl group hover:-translate-y-1 hover:border-slate-300 hover:shadow-lg hover:shadow-slate-100/50 transition-all duration-300 overflow-hidden shadow-sm"
+                className="bg-white border border-slate-200/60 rounded-2xl group hover:-translate-y-1 hover:border-slate-300 hover:shadow-lg hover:shadow-slate-100/50 transition-all duration-300 overflow-hidden shadow-sm"
               >
                 {/* Top gradient strip */}
                 <div className="h-1.5" style={{ background: cert.color }} />
@@ -154,7 +154,7 @@ export default function Certifications() {
                       }
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h3 className="font-display font-semibold text-slate-900 text-base leading-tight mb-1 group-hover:text-blue-600 transition-colors">
+                      <h3 className="font-display font-semibold text-slate-800 text-base leading-tight mb-1 group-hover:text-primary-600 transition-colors">
                         {cert.title}
                       </h3>
                       <p className="font-body text-slate-500 text-xs">{cert.issuer}</p>
@@ -163,7 +163,7 @@ export default function Certifications() {
 
                   {/* Meta */}
                   <div className="flex items-center gap-3 mb-4">
-                    <HiBadgeCheck size={16} className="text-blue-600 flex-shrink-0" />
+                    <HiBadgeCheck size={16} className="text-primary-600 flex-shrink-0" />
                     <span className="font-mono text-xs text-slate-500">Issued: {cert.date}</span>
                     <span className="ml-auto font-mono text-xs text-slate-400">{cert.credential}</span>
                   </div>
@@ -181,7 +181,7 @@ export default function Certifications() {
                       href={cert.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 font-medium text-xs text-blue-600 hover:text-blue-700 transition-colors group/link"
+                      className="flex items-center gap-2 font-medium text-xs text-primary-600 hover:text-primary-700 transition-colors group/link"
                     >
                       View Credential
                       <HiExternalLink size={12} className="group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />

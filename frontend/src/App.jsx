@@ -1,4 +1,3 @@
-import { Toaster } from 'react-hot-toast'
 import About from './components/About/About'
 import Certifications from './components/Certifications/Certifications'
 import CodingProfiles from './components/CodingProfiles/CodingProfiles'
@@ -12,30 +11,18 @@ import Skills from './components/Skills/Skills'
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-white relative overflow-x-hidden">
+    <div className="min-h-screen bg-slate-50 relative overflow-x-hidden">
 
-      {/* Very subtle top glow — barely visible, professional */}
+      {/* Subtle background pattern */}
       <div
         className="pointer-events-none fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] z-0"
-        style={{ background: 'radial-gradient(ellipse at top, rgba(59,130,246,0.03) 0%, transparent 70%)' }}
+        style={{ background: 'radial-gradient(ellipse at top, rgba(37, 99, 235, 0.04) 0%, transparent 70%)' }}
         aria-hidden="true"
       />
-
-      <Toaster
-        position="top-right"
-        toastOptions={{
-          style: {
-            background: '#ffffff',
-            color: '#0f172a',
-            border: '1px solid #e2e8f0',
-            fontFamily: 'Inter, system-ui, sans-serif',
-            fontSize: '13px',
-            borderRadius: '8px',
-            boxShadow: '0 4px 12px rgba(15,23,42,0.05)',
-          },
-          success: { iconTheme: { primary: '#2563eb', secondary: '#fff' } },
-          error:   { iconTheme: { primary: '#ef4444', secondary: '#fff' } },
-        }}
+      <div
+        className="fixed inset-0 pointer-events-none -z-10"
+        style={{ backgroundImage: 'radial-gradient(circle at center, #e0e0e0 1px, transparent 1px)', backgroundSize: '20px 20px', opacity: 0.1 }}
+        aria-hidden="true"
       />
 
       <Navbar />

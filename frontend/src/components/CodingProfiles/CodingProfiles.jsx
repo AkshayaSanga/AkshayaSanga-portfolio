@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { FaExternalLinkAlt, FaGithub, FaLinkedin } from 'react-icons/fa'
-import { SiCodechef, SiGeeksforgeeks, SiHackerrank, SiLeetcode } from 'react-icons/si'
+import { SiHackerrank, SiLeetcode } from 'react-icons/si'
 import { useInView } from 'react-intersection-observer'
 
 const PROFILES = [
@@ -20,11 +20,11 @@ const PROFILES = [
     name: 'LeetCode',
     handle: 'SangaAkshaya',
     url: 'https://leetcode.com/u/SangaAkshaya/',
-    icon: SiLeetcode,
-    color: '#3b82f6',
-    bg: 'from-blue-600/20 to-indigo-600/10',
+    icon: SiLeetcode, // Keep leetcode color
+    color: '#facc15',
+    bg: 'from-yellow-500/20 to-orange-500/10',
     stats: [
-      { label: 'Problems Solved', value: '202 Problems Solved' },
+      { label: 'Problems Solved', value: '200+ Problems Solved' },
     ],
     description: 'Daily problem solving with focus on DSA and algorithmic thinking.',
   },
@@ -32,9 +32,9 @@ const PROFILES = [
     name: 'HackerRank',
     handle: '23891A05I0',
     url: 'https://www.hackerrank.com/profile/23891A05I0',
-    icon: SiHackerrank,
-    color: '#0ea5e9',
-    bg: 'from-sky-600/20 to-blue-600/10',
+    icon: SiHackerrank, // Keep hackerrank color
+    color: '#2ec866',
+    bg: 'from-green-500/20 to-emerald-500/10',
     stats: [
       { label: 'Problem Solving', value: '5★ in Problem Solving' },
     ],
@@ -44,37 +44,13 @@ const PROFILES = [
     name: 'LinkedIn',
     handle: 'AkshayaSanga',
     url: 'https://www.linkedin.com/in/akshaya-sanga-b9bb07307',
-    icon: FaLinkedin,
-    color: '#2563eb',
-    bg: 'from-blue-500/20 to-cyan-500/10',
+    icon: FaLinkedin, // Keep linkedin color
+    color: '#0a66c2',
+    bg: 'from-sky-500/20 to-blue-500/10',
     stats: [
       { label: 'Connections',  value: '500+ Connections' },
     ],
     description: 'Professional network, career journey, and tech insights.',
-  },
-  {
-    name: 'GeeksforGeeks',
-    handle: 'SangaAkshaya',
-    url: 'https://share.google/9yZ9sNh21z9IIKx5O',
-    icon: SiGeeksforgeeks,
-    color: '#0284c7',
-    bg: 'from-cyan-600/20 to-sky-600/10',
-    stats: [
-      { label: 'Problems Solved', value: '150+ Problems Solved' },
-    ],
-    description: 'Articles, problems, and contributions to the developer community.',
-  },
-  {
-    name: 'CodeChef',
-    handle: 'sangaakshaya',
-    url: 'https://www.codechef.com/users/sangaakshaya',
-    icon: SiCodechef,
-    color: '#4f46e5',
-    bg: 'from-indigo-600/20 to-blue-600/10',
-    stats: [
-      { label: 'Rating', value: '1600+ Rating (3★)' },
-    ],
-    description: 'Competitive programming and monthly coding contests.',
   },
 ]
 
@@ -90,7 +66,7 @@ export default function CodingProfiles() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="font-mono text-primary-400 text-sm tracking-widest uppercase mb-3">Find me on</p>
+          <p className="font-mono text-slate-500 text-sm tracking-widest uppercase mb-3">Find me on</p>
           <h2 className="section-heading">Coding <span className="gradient-text">Profiles</span></h2>
           <p className="section-subheading">Platforms where I sharpen my skills and build my developer presence</p>
         </motion.div>
@@ -118,12 +94,12 @@ export default function CodingProfiles() {
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center gap-2">
-                      <h3 className="font-display font-semibold text-slate-900 text-lg group-hover:text-blue-600 transition-colors">
+                      <h3 className="font-display font-semibold text-slate-800 text-lg group-hover:text-primary-600 transition-colors">
                         {profile.name}
                       </h3>
                       <FaExternalLinkAlt
                         size={10}
-                        className="text-slate-400 group-hover:text-blue-600 transition-colors group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+                        className="text-slate-400 group-hover:text-primary-600 transition-colors group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
                       />
                     </div>
                     <p className="font-mono text-xs text-slate-500">{profile.handle}</p>
@@ -137,7 +113,7 @@ export default function CodingProfiles() {
                 {/* Stats */}
                 <div className="mt-auto">
                   {profile.stats.map(stat => (
-                    <div key={stat.label} className="w-full text-center py-2.5 rounded-xl bg-white border border-slate-200">
+                    <div key={stat.label} className="w-full text-center py-2.5 rounded-xl bg-white border border-slate-200/80">
                       <span className="font-display font-medium text-sm text-slate-800">{stat.value}</span>
                     </div>
                   ))}

@@ -4,6 +4,7 @@ const rateLimit = require('express-rate-limit')
 const { body, validationResult } = require('express-validator')
 const nodemailer = require('nodemailer')
 const Contact  = require('../models/Contact')
+const { requireApiKey } = require('../middleware/auth')
 
 // Rate limiter: max 5 submissions per 15 minutes per IP
 const contactLimiter = rateLimit({
@@ -125,7 +126,7 @@ router.post('/', contactLimiter, validateContact, async (req, res, next) => {
 })
 
 // GET /api/contact (admin - list all messages)
-router.get('/', async (req, res, next) => {
+router.get('/', requireApiKey, async (req, res, next) => {
   try {
     const { page = 1, limit = 20, status } = req.query
     const filter = status ? { status } : {}
@@ -150,7 +151,7 @@ router.get('/', async (req, res, next) => {
 })
 
 // PATCH /api/contact/:id/status
-router.patch('/:id/status', async (req, res, next) => {
+router.patch('/:id/status', requireApiKey, async (req, res, next) => {
   try {
     const { status } = req.body
     if (!['new', 'read', 'replied'].includes(status)) {
@@ -165,7 +166,7 @@ router.patch('/:id/status', async (req, res, next) => {
 })
 
 // DELETE /api/contact/:id
-router.delete('/:id', async (req, res, next) => {
+router.delete('/:id', requireApiKey, async (req, res, next) => {
   try {
     const deleted = await Contact.findByIdAndDelete(req.params.id)
     if (!deleted) return res.status(404).json({ success: false, message: 'Message not found' })

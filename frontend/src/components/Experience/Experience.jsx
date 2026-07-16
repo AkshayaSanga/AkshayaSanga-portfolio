@@ -62,7 +62,7 @@ export default function Experience() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="font-mono text-primary-400 text-sm tracking-widest uppercase mb-3">My Journey</p>
+          <p className="font-mono text-slate-500 text-sm tracking-widest uppercase mb-3">My Journey</p>
           <h2 className="section-heading">Experience & <span className="gradient-text">Achievements</span></h2>
         </motion.div>
 
@@ -75,14 +75,14 @@ export default function Experience() {
               transition={{ duration: 0.5, delay: i * 0.15 }}
               className="bg-slate-50 border border-slate-200/60 rounded-2xl p-6 md:p-8 relative overflow-hidden group hover:-translate-y-1 hover:border-slate-300 hover:shadow-lg hover:shadow-slate-100/50 transition-all duration-300"
             >
-              <div className="absolute top-0 left-0 w-1 h-full bg-blue-600" />
+              <div className="absolute top-0 left-0 w-1 h-full bg-primary-500" />
               <div className="flex flex-col md:flex-row md:items-start justify-between gap-5 mb-6 pl-2 md:pl-0">
                 <div>
-                  <h3 className="font-display font-semibold text-slate-900 text-xl md:text-2xl mb-1.5 group-hover:text-blue-600 transition-colors">
+                  <h3 className="font-display font-semibold text-slate-800 text-xl md:text-2xl mb-1.5 group-hover:text-primary-600 transition-colors">
                     {exp.role}
                   </h3>
                   <p className="font-body text-slate-700 text-base md:text-lg mb-4 flex items-center gap-2">
-                    <HiBriefcase className="text-blue-600 flex-shrink-0" />
+                    <HiBriefcase className="text-primary-600 flex-shrink-0" />
                     {exp.company}
                   </p>
                   <div className="flex flex-wrap items-center gap-4 font-mono text-xs text-slate-500">
@@ -95,19 +95,19 @@ export default function Experience() {
                   href={exp.certificateLink}
                   target={exp.certificateLink !== '#' ? "_blank" : "_self"}
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-xs font-medium text-blue-600 hover:text-blue-700 transition-colors bg-blue-50 hover:bg-blue-100 px-4 py-2.5 rounded-lg border border-blue-200 shrink-0 self-start w-fit"
+                  className="inline-flex items-center gap-2 text-xs font-medium text-primary-600 hover:text-primary-700 transition-colors bg-primary-50 hover:bg-primary-100 px-4 py-2.5 rounded-lg border border-primary-200 shrink-0 self-start w-fit"
                 >
                   View Certificate
                   <HiExternalLink size={14} />
                 </a>
               </div>
-              <div className="space-y-3 mb-7 pl-2 md:pl-0">
+              <ul className="list-disc list-inside space-y-2 mb-7 pl-2 md:pl-0 font-body text-slate-500 text-sm leading-relaxed">
                 {exp.description.map((desc, index) => (
-                  <p key={index} className="font-body text-slate-500 text-sm leading-relaxed">
+                  <li key={index}>
                     {desc}
-                  </p>
+                  </li>
                 ))}
-              </div>
+              </ul>
               <div className="flex flex-wrap gap-2 pt-6 border-t border-slate-200/60 pl-2 md:pl-0">
                 {exp.skills.map(skill => (
                   <span key={skill} className="px-2.5 py-1 rounded-md bg-white border border-slate-200/80 font-mono text-xs text-slate-600">{skill}</span>

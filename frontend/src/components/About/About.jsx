@@ -3,16 +3,16 @@ import { HiAcademicCap, HiCode, HiDatabase, HiLightningBolt, HiServer } from 're
 import { useInView } from 'react-intersection-observer'
 
 const HIGHLIGHTS = [
-  { icon: HiCode,          label: 'Frontend',  value: 'React.js',   color: 'text-blue-600' },
-  { icon: HiServer,        label: 'Backend',   value: 'Node.js',    color: 'text-blue-700' },
-  { icon: HiDatabase,      label: 'Database',  value: 'MongoDB',    color: 'text-cyan-600' },
+  { icon: HiCode,          label: 'Frontend',  value: 'React.js',   color: 'text-primary-600' },
+  { icon: HiServer,        label: 'Backend',   value: 'Node.js',    color: 'text-primary-700' },
+  { icon: HiDatabase,      label: 'Database',  value: 'MongoDB',    color: 'text-teal-600' },
   { icon: HiLightningBolt, label: 'Projects',  value: '10+',        color: 'text-indigo-600' },
 ]
 
 const STATS = [
   { label: 'Projects Built',     value: '6+' },
   { label: 'Technologies',       value: '15+' },
-  { label: 'LeetCode Solved',    value: '202' },
+  { label: 'LeetCode Solved',    value: '200+' },
   { label: 'CGPA',               value: '8.4' },
 ]
 
@@ -28,7 +28,7 @@ export default function About() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="font-mono text-primary-400 text-sm tracking-widest uppercase mb-3">Get to know me</p>
+          <p className="font-mono text-slate-500 text-sm tracking-widest uppercase mb-3">Get to know me</p>
           <h2 className="section-heading">About <span className="gradient-text">Me</span></h2>
         </motion.div>
 
@@ -39,18 +39,18 @@ export default function About() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.1 }}
           >
-            <div className="space-y-5 text-slate-600 leading-relaxed font-body text-base">
+            <div className="space-y-5 text-slate-600 leading-relaxed font-body text-base tracking-wide">
               <p>
-                I'm <span className="text-blue-600 font-semibold">Akshaya Sanga</span>, a final-year B.Tech CSE student
-                (CGPA 8.4) passionate about building modern, scalable full-stack and AI-powered web applications.
+                I'm <span className="font-semibold text-slate-800">Akshaya Sanga</span>, a final-year Computer Science student (CGPA 8.4) with a
+                passion for developing scalable full-stack applications and intelligent AI-driven solutions.
               </p>
               <p>
                 I specialize in the <span className="text-slate-900 font-medium">MERN stack</span> — MongoDB, Express.js, React, and Node.js —
                 and love turning complex problems into clean, efficient solutions. I completed an AI internship at
-                <span className="text-slate-900 font-medium"> IBM SkillsBuild x Edunet Foundation</span>.
+                <span className="text-slate-900 font-medium"> IBM SkillsBuild & Edunet Foundation</span>.
               </p>
               <p>
-                I've solved <span className="text-blue-600 font-semibold">202 problems on LeetCode</span> (81 Easy, 92 Medium, 29 Hard)
+                I've solved <span className="font-semibold text-slate-800">200+ problems on LeetCode</span> (81 Easy, 92 Medium, 29 Hard)
                 with a contest rating of 1439. Always open to internships and SDE roles where I can grow and contribute.
               </p>
             </div>
@@ -62,12 +62,12 @@ export default function About() {
               transition={{ delay: 0.2 }}
               className="mt-8 bg-slate-50 border border-slate-200/60 p-5 rounded-2xl flex items-center gap-4 shadow-sm hover:border-slate-300 hover:shadow-md hover:shadow-slate-100/50 transition-all duration-300"
             >
-              <div className="p-3 rounded-xl bg-white border border-slate-200/60 text-blue-600 flex-shrink-0">
+              <div className="p-3 rounded-xl bg-white border border-slate-200/60 text-primary-600 flex-shrink-0">
                 <HiAcademicCap size={24} />
               </div>
               <div>
-                <h4 className="font-display font-semibold text-slate-900 text-sm sm:text-base">B.Tech in Computer Science Engineering</h4>
-                <p className="font-mono text-xs text-slate-500 mt-1">Vignan Institute of Tech & Science • CGPA: 8.4 • Expected 2027</p>
+                <h4 className="font-display font-semibold text-slate-800 text-sm sm:text-base">B.Tech in Computer Science & Engineering</h4>
+                <p className="font-mono text-xs text-slate-500 mt-1">Vignan Institute of Tech & Science • CGPA: 8.4 • Expected 2025</p>
               </div>
             </motion.div>
 
@@ -86,7 +86,7 @@ export default function About() {
                   </div>
                   <div>
                     <p className="font-mono text-xs text-slate-500">{label}</p>
-                    <p className="font-display font-semibold text-slate-900 text-sm">{value}</p>
+                    <p className="font-display font-semibold text-slate-800 text-sm">{value}</p>
                   </div>
                 </motion.div>
               ))}
@@ -101,7 +101,7 @@ export default function About() {
               <a
                 href="#contact"
                 onClick={e => { e.preventDefault(); document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' }) }}
-                className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors"
+                className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-primary-600 text-white font-medium hover:bg-primary-700 transition-colors"
               >
                 Get in Touch
               </a>
@@ -147,15 +147,15 @@ export default function About() {
                     ))}
                   </div>
                   <div className="relative z-10 text-center">
-                    <div className="w-28 h-28 rounded-full border-2 border-blue-600/30 mx-auto mb-4 shadow-lg shadow-blue-600/10 overflow-hidden bg-slate-50">
+                    <div className="w-28 h-28 rounded-full border-2 border-primary-600/30 mx-auto mb-4 shadow-lg shadow-primary-600/10 overflow-hidden bg-slate-50">
                       <img 
                         src="/profile.jpeg" 
                         alt="Akshaya Sanga" 
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <p className="font-display font-semibold text-slate-900 text-xl">Akshaya Sanga</p>
-                    <p className="text-blue-600 font-mono text-xs mt-1">Full-Stack Developer</p>
+                    <p className="font-display font-semibold text-slate-800 text-xl">Akshaya Sanga</p>
+                    <p className="text-slate-500 font-mono text-xs mt-1">Full-Stack & AI Developer</p>
                   </div>
                 </div>
               </div>
@@ -166,7 +166,7 @@ export default function About() {
                 transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
                 className="absolute -top-4 -right-4 bg-white border border-slate-200/80 rounded-xl px-3 py-2 shadow-sm"
               >
-                <p className="font-mono text-xs text-blue-600">Open to Work ✓</p>
+                <p className="font-mono text-xs text-slate-600">Open to Work ✓</p>
               </motion.div>
             </div>
 
@@ -180,7 +180,7 @@ export default function About() {
                   transition={{ delay: 0.4 + i * 0.08 }}
                   className="bg-slate-50 border border-slate-200/60 rounded-2xl p-5 text-center shadow-sm hover:-translate-y-1 hover:border-slate-300 hover:shadow-md hover:shadow-slate-100/50 transition-all duration-300"
                 >
-                  <p className="font-display font-bold text-3xl text-blue-600">{value}</p>
+                  <p className="font-display font-bold text-3xl text-slate-800">{value}</p>
                   <p className="font-mono text-xs text-slate-500 mt-1">{label}</p>
                 </motion.div>
               ))}
