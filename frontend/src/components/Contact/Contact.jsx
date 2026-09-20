@@ -67,7 +67,9 @@ export default function Contact() {
       toast.success('Message sent! I\'ll get back to you soon 🚀')
       setForm(INITIAL)
     } catch (err) {
-      toast.error(err.response?.data?.message || 'Something went wrong. Please try again.')
+      console.error('Contact form submission failed:', err)
+      const errorMessage = err.response?.data?.message || err.text || err.message
+      toast.error(errorMessage || 'Something went wrong. Please try again.')
     } finally {
       setLoading(false)
     }
