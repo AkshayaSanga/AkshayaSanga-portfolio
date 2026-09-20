@@ -57,7 +57,7 @@ export default function Hero() {
         {/* Name */}
         <motion.h1
           variants={nameContainer}
-          className="text-5xl sm:text-6xl md:text-7xl font-bold font-display tracking-tight leading-[1.05] mb-5 gradient-text"
+          className="text-4xl sm:text-5xl md:text-7xl font-bold font-display tracking-tight leading-[1.05] mb-5 gradient-text break-words"
         >
           {Array.from("Akshaya Sanga").map((char, i) => (
             <motion.span key={i} variants={nameChar} className="inline-block">

@@ -5,18 +5,21 @@ import { useInView } from 'react-intersection-observer'
 const EXPERIENCES = [
   {
     id: 1,
-    role: 'AI Intern',
+    role: 'AI Intern | AI Fluency & Machine Learning',
     company: 'FlyRank.ai',
     type: 'Internship',
     location: 'Remote',
-    duration: 'Jul 2026 – Sep 2026',
+    duration: '01 Jul 2026 – 10 Sep 2026',
     description: [
-      'Completed an AI internship focused on AI fluency and machine learning, covering practical ML workflows and AI applications.',
-      'Worked on data wrangling, embeddings, clustering, intent modeling, opportunity modeling, and insight-to-action workflows.',
-      'Applied structured problem-solving to build real-world AI-driven use cases and data-informed decision systems.'
+      'Successfully completed the AI Fluency and Machine Learning internship tracks at FlyRank.ai.',
+      'Developed practical AI and machine learning knowledge while demonstrating technical competency across the internship program.',
+      'Demonstrated professional conduct and collaborative contribution as part of the FlyRank team.'
     ],
-    skills: ['AI Fluency', 'Machine Learning', 'Data Wrangling', 'Embeddings'],
-    certificateLink: '#',
+    skills: ['AI Fluency', 'Machine Learning', 'Technical Competency', 'Collaboration'],
+    certificates: [
+      { label: 'AI Fluency Certificate', href: '/flyrank-ai-fluency-certificate.jpg.jpg' },
+      { label: 'Machine Learning Certificate', href: '/flyrank-machine-learning-certificate.jpg.jpg' },
+    ],
   },
   {
     id: 2,
@@ -31,7 +34,7 @@ const EXPERIENCES = [
       'Built a solid foundation in end-to-end ML workflows from dataset understanding to model evaluation.'
     ],
     skills: ['Python', 'Machine Learning', 'Data Analysis', 'Model Development'],
-    certificateLink: 'http://localhost:3000/#',
+    certificateLink: '/ibm-certificate.pdf',
   },
   {
     id: 3,
@@ -73,7 +76,7 @@ export default function Experience() {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.15 }}
-              className="bg-[#f9f5ef] border border-[#e5d8c4] rounded-2xl p-6 md:p-8 relative overflow-hidden group hover:-translate-y-1 hover:border-[#d7bf96] hover:shadow-lg hover:shadow-[#d7bf96]/10 transition-all duration-300"
+              className="bg-[#f9f5ef] border border-[#e5d8c4] rounded-2xl p-5 sm:p-6 md:p-8 relative overflow-hidden group hover:-translate-y-1 hover:border-[#d7bf96] hover:shadow-lg hover:shadow-[#d7bf96]/10 transition-all duration-300"
             >
               <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-[#8f6a32] to-[#caa76d]" />
               <div className="flex flex-col md:flex-row md:items-start justify-between gap-5 mb-6 pl-2 md:pl-0">
@@ -91,15 +94,20 @@ export default function Experience() {
                     <span className="px-2.5 py-1 rounded-md bg-white border border-[#e5d8c4] text-[#413a34]">{exp.type}</span>
                   </div>
                 </div>
-                <a
-                  href={exp.certificateLink}
-                  target={exp.certificateLink !== '#' ? "_blank" : "_self"}
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-xs font-medium text-[#6d4d2e] hover:text-[#4a3828] transition-colors bg-[#f3ebdf] hover:bg-[#eadcc0] px-4 py-2.5 rounded-lg border border-[#d7bf96] shrink-0 self-start w-fit"
-                >
-                  View Certificate
-                  <HiExternalLink size={14} />
-                </a>
+                <div className="flex flex-col sm:flex-row gap-2 w-full md:w-auto shrink-0 self-start">
+                  {(exp.certificates || [{ label: 'View Certificate', href: exp.certificateLink }]).map(certificate => (
+                    <a
+                      key={certificate.href}
+                      href={certificate.href}
+                      target={certificate.href !== '#' ? "_blank" : "_self"}
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-between gap-2 text-xs font-medium text-[#6d4d2e] hover:text-[#4a3828] transition-colors bg-[#f3ebdf] hover:bg-[#eadcc0] px-4 py-2.5 rounded-lg border border-[#d7bf96] w-full sm:w-fit max-w-full text-left"
+                    >
+                      {certificate.label}
+                      <HiExternalLink size={14} />
+                    </a>
+                  ))}
+                </div>
               </div>
               <ul className="list-disc list-inside space-y-2 mb-7 pl-2 md:pl-0 font-body text-[#544d49] text-sm leading-relaxed">
                 {exp.description.map((desc, index) => (

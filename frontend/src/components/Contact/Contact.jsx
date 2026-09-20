@@ -1,3 +1,4 @@
+import emailjs from '@emailjs/browser'
 import axios from 'axios'
 import { motion } from 'framer-motion'
 import { useState } from 'react'
@@ -19,6 +20,9 @@ const SOCIAL = [
 ]
 
 const INITIAL = { name: '', email: '', subject: '', message: '' }
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 
 export default function Contact() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 })
@@ -44,8 +48,22 @@ export default function Contact() {
     }
     setLoading(true)
     try {
-      const API_URL = import.meta.env.VITE_API_URL || ''
-      await axios.post(`${API_URL}/api/contact`, form)
+      if (EMAILJS_SERVICE_ID && EMAILJS_TEMPLATE_ID && EMAILJS_PUBLIC_KEY) {
+        await emailjs.send(
+          EMAILJS_SERVICE_ID,
+          EMAILJS_TEMPLATE_ID,
+          {
+            from_name: name,
+            reply_to: email,
+            subject,
+            message,
+          },
+          { publicKey: EMAILJS_PUBLIC_KEY },
+        )
+      } else {
+        const API_URL = import.meta.env.VITE_API_URL || ''
+        await axios.post(`${API_URL}/api/contact`, form)
+      }
       toast.success('Message sent! I\'ll get back to you soon 🚀')
       setForm(INITIAL)
     } catch (err) {
@@ -82,7 +100,7 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="lg:col-span-2 space-y-6"
           >
-            <div className="bg-slate-50 border border-slate-200/60 rounded-2xl p-8 shadow-sm">
+            <div className="bg-slate-50 border border-slate-200/60 rounded-2xl p-5 sm:p-8 shadow-sm">
               <h3 className="font-display font-semibold text-slate-800 text-xl mb-6">Contact Information</h3>
               <div className="space-y-5">
                 {CONTACT_INFO.map(({ icon: Icon, label, value, href }) => (
@@ -94,7 +112,7 @@ export default function Contact() {
                       <p className="font-mono text-xs text-slate-500 mb-0.5">{label}</p>
                       {href ? (
                         <div className="flex items-center gap-2">
-                          <a href={href} className="font-body text-slate-700 hover:text-primary-600 transition-colors text-sm">{value}</a>
+                          <a href={href} className="font-body text-slate-700 hover:text-primary-600 transition-colors text-sm break-all">{value}</a>
                           <button onClick={handleCopyEmail} className="text-slate-400 hover:text-primary-600 transition-colors" aria-label="Copy email">
                             <HiClipboardCopy size={14} />
                           </button>
@@ -145,7 +163,7 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="lg:col-span-3"
           >
-            <div className="bg-slate-50 border border-slate-200/60 rounded-2xl p-8 shadow-sm">
+            <div className="bg-slate-50 border border-slate-200/60 rounded-2xl p-5 sm:p-8 shadow-sm">
               <h3 className="font-display font-semibold text-slate-800 text-xl mb-6">Send a Message</h3>
               <form onSubmit={handleSubmit} className="space-y-5" noValidate>
                 <div className="grid sm:grid-cols-2 gap-5">

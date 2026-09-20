@@ -13,6 +13,9 @@
     { "src": "/(.*)", "dest": "/index.html" }
   ],
   "env": {
-    "VITE_API_URL": "https://akshaya-portfolio-backend.onrender.com"
+    "VITE_API_URL": "https://akshaya-portfolio-backend.onrender.com",
+    "VITE_EMAILJS_SERVICE_ID": "service_p7t7et6",
+    "VITE_EMAILJS_TEMPLATE_ID": "template_of0c89j",
+    "VITE_EMAILJS_PUBLIC_KEY": "MfXQGN9QGHw-78WKP"
   }
 }

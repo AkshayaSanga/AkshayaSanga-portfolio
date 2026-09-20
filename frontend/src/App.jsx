@@ -1,6 +1,5 @@
 import About from './components/About/About'
 import Certifications from './components/Certifications/Certifications'
-import ClassicCursor from './components/ClassicCursor/ClassicCursor'
 import CodingProfiles from './components/CodingProfiles/CodingProfiles'
 import Contact from './components/Contact/Contact'
 import Experience from './components/Experience/Experience'
@@ -13,8 +12,6 @@ import Skills from './components/Skills/Skills'
 export default function App() {
   return (
     <div className="min-h-screen bg-[#f7f3ee] text-[#2d2a26] relative overflow-x-hidden">
-      <ClassicCursor />
-
       {/* Classic editorial backdrop */}
       <div
         className="pointer-events-none fixed top-0 left-1/2 -translate-x-1/2 w-[950px] h-[440px] z-0"

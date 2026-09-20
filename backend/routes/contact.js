@@ -55,7 +55,7 @@ const sendEmail = async ({ name, email, subject, message }) => {
   const transporter = createTransporter()
   const mailOptions = {
     from: `"Portfolio Contact" <${process.env.EMAIL_USER}>`,
-    to:   process.env.EMAIL_TO || process.env.EMAIL_USER,
+    to:   process.env.EMAIL_TO || 'sangaakshaya7@gmail.com',
     replyTo: email,
     subject: `[Portfolio] ${subject || 'New Contact Message'} - ${name}`,
     html: `
