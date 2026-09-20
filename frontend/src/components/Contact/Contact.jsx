@@ -58,7 +58,7 @@ export default function Contact() {
             subject,
             message,
           },
-          { publicKey: EMAILJS_PUBLIC_KEY },
+          EMAILJS_PUBLIC_KEY,
         )
       } else {
         const API_URL = import.meta.env.VITE_API_URL || ''

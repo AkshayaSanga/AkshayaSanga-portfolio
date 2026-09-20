@@ -20,6 +20,7 @@ app.use(cors({
   origin: [ // The frontend dev server runs on 5173
     process.env.FRONTEND_URL || 'http://localhost:5173',
     'https://akshayasanga.vercel.app', // Your production frontend
+    'https://akshaya-sanga-portfolio.vercel.app', // Current production frontend
   ],
   methods: ['GET', 'POST', 'PATCH', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
