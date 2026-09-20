@@ -41,17 +41,16 @@ export default function About() {
           >
             <div className="space-y-5 text-slate-600 leading-relaxed font-body text-base tracking-wide">
               <p>
-                I'm <span className="font-semibold text-slate-800">Akshaya Sanga</span>, a final-year Computer Science student (CGPA 8.4) with a
-                passion for developing scalable full-stack applications and intelligent AI-driven solutions.
+                I'm <span className="font-semibold text-slate-800">Akshaya Sanga</span>, a Computer Science undergraduate with hands-on experience
+                building AI, machine learning, and full-stack applications.
               </p>
               <p>
-                I specialize in the <span className="text-slate-900 font-medium">MERN stack</span> — MongoDB, Express.js, React, and Node.js —
-                and love turning complex problems into clean, efficient solutions. I completed an AI internship at
-                <span className="text-slate-900 font-medium"> IBM SkillsBuild & Edunet Foundation</span>.
+                I work across <span className="text-slate-900 font-medium">Python, Java, JavaScript, React, FastAPI, and SQL</span>, with strong
+                focus on machine learning, Generative AI, LLMs, RAG, and end-to-end product development.
               </p>
               <p>
-                I've solved <span className="font-semibold text-slate-800">200+ problems on LeetCode</span> (81 Easy, 92 Medium, 29 Hard)
-                with a contest rating of 1439. Always open to internships and SDE roles where I can grow and contribute.
+                I've solved <span className="font-semibold text-slate-800">200+ Data Structures and Algorithms problems on LeetCode</span> and
+                built AI-powered projects involving data preprocessing, model evaluation, and intelligent application workflows.
               </p>
             </div>
 
@@ -67,7 +66,7 @@ export default function About() {
               </div>
               <div>
                 <h4 className="font-display font-semibold text-slate-800 text-sm sm:text-base">B.Tech in Computer Science & Engineering</h4>
-                <p className="font-mono text-xs text-slate-500 mt-1">Vignan Institute of Tech & Science • CGPA: 8.4 • Expected 2025</p>
+                <p className="font-mono text-xs text-slate-500 mt-1">Vignan Institute of Technology and Science • CGPA: 8.40 • 2023–2027</p>
               </div>
             </motion.div>
 

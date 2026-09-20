@@ -49,7 +49,7 @@ export default function Hero() {
         {/* Status badge */}
         <motion.div variants={item} className="inline-flex items-center gap-2 mb-8">
           <span className="w-1.5 h-1.5 rounded-full bg-primary-500 animate-pulse" />
-          <span className="font-mono text-[11px] text-slate-500 tracking-widest uppercase">
+          <span className="font-mono text-[11px] text-[#6d4d2e] tracking-widest uppercase">
             Open to Internship & Full-Time Roles
           </span>
         </motion.div>
@@ -68,17 +68,17 @@ export default function Hero() {
         {/* Role */}
         <motion.p
           variants={item}
-          className="text-base md:text-lg font-medium text-slate-600 tracking-[-0.01em] mb-3"
+          className="text-base md:text-lg font-medium text-[#413a34] tracking-[-0.01em] mb-3"
         >
-          Software Engineer · Full-Stack Developer · AI Developer
+          AI & Full-Stack Engineer · ML Developer · Software Engineer
         </motion.p>
 
         {/* Short bio */}
         <motion.p
           variants={item}
-          className="text-sm text-slate-500 max-w-md mx-auto leading-relaxed mb-10"
+          className="text-sm text-[#5d5047] max-w-md mx-auto leading-relaxed mb-10"
         >
-          Final-year CS student (CGPA 8.4) specializing in full-stack development and AI.
+          Computer Science undergraduate specializing in AI, machine learning, LLMs, RAG, and scalable full-stack product development.
           Proven problem-solver with 200+ LeetCode solutions.
         </motion.p>
 
@@ -112,8 +112,8 @@ export default function Hero() {
               aria-label={label}
               whileHover={{ y: -3, scale: 1.1 }}
               transition={{ duration: 0.2, ease: 'easeOut' }}
-              className="w-9 h-9 rounded-lg border border-slate-200 bg-white text-slate-400
-                         hover:text-slate-900 hover:border-slate-300 shadow-sm
+              className="w-9 h-9 rounded-lg border border-[#e5d8c4] bg-[#fffdf9] text-[#8b7967]
+                         hover:text-[#1c1816] hover:border-[#caa76d] shadow-sm
                          flex items-center justify-center"
             >
               <Icon size={15} />
@@ -124,7 +124,7 @@ export default function Hero() {
 
       {/* Scroll hint */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-        <div className="w-px h-10 bg-gradient-to-b from-slate-300 to-transparent" />
+        <div className="w-px h-10 bg-gradient-to-b from-[#caa76d] to-transparent" />
       </div>
     </section>
   )

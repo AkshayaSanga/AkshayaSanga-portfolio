@@ -33,7 +33,7 @@ export default function Footer() {
           <div>
             <div className="font-display text-2xl font-bold mb-3">
               <span className="text-slate-900">AS</span>
-              <span className="text-blue-600">.</span>
+              <span className="text-[#b28b45]">.</span>
             </div>
             <p className="font-body text-slate-500 text-sm leading-relaxed max-w-xs">
               Final-year CSE student specializing in Software Development and Data Analytics.
@@ -46,7 +46,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="p-2.5 rounded-lg border border-slate-200 bg-white text-slate-400 hover:text-blue-600 hover:border-slate-300 hover:bg-slate-50 transition-all duration-300 hover:-translate-y-0.5 shadow-sm"
+                  className="p-2.5 rounded-lg border border-[#e5d8c4] bg-[#fffdf9] text-[#8b7967] hover:text-[#6d4d2e] hover:border-[#caa76d] hover:bg-[#f7f1ea] transition-all duration-300 hover:-translate-y-0.5 shadow-sm"
                 >
                   <Icon size={16} />
                 </a>
@@ -62,7 +62,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <button
                     onClick={() => scrollTo(link.href)}
-                    className="font-body text-sm text-slate-500 hover:text-blue-600 transition-colors duration-200 text-left"
+                    className="font-body text-sm text-slate-500 hover:text-[#6d4d2e] transition-colors duration-200 text-left"
                   >
                     {link.label}
                   </button>
@@ -75,7 +75,7 @@ export default function Footer() {
           <div>
             <h4 className="font-display font-bold text-slate-900 text-sm uppercase tracking-wider mb-4">Get In Touch</h4>
             <div className="space-y-2">
-              <a href="mailto:sangaakshaya7@gmail.com" className="block font-body text-sm text-slate-500 hover:text-blue-600 transition-colors">
+              <a href="mailto:sangaakshaya7@gmail.com" className="block font-body text-sm text-slate-500 hover:text-[#6d4d2e] transition-colors">
                 sangaakshaya7@gmail.com
               </a>
               <p className="font-body text-sm text-slate-500">Hyderabad, Telangana, IN</p>
@@ -95,7 +95,7 @@ export default function Footer() {
         <div className="border-t border-slate-200 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="font-body text-sm text-slate-500 flex items-center gap-1.5">
             Designed & Built by{' '}
-            <span className="text-blue-600 font-semibold">AkshayaSanga</span>
+            <span className="text-[#6d4d2e] font-semibold">AkshayaSanga</span>
             <span className="flex items-center gap-1 text-slate-400">
               with <FaHeart size={10} className="text-red-500" /> using React & Tailwind
             </span>

@@ -185,7 +185,7 @@ export default function Contact() {
                     rows={4}
                     placeholder="Tell me about your project or opportunity..."
                     className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-slate-800 placeholder-slate-400 font-body text-sm
-                               focus:outline-none focus:border-blue-600/50 focus:ring-1 focus:ring-blue-600/20
+                               focus:outline-none focus:border-[#b28b45] focus:ring-1 focus:ring-[#d8bf8d]/50
                                transition-all duration-200 resize-none"
                   />
                 </div>
@@ -230,7 +230,7 @@ function FormField({ label, name, type, placeholder, value, onChange }) {
         onChange={onChange}
         placeholder={placeholder}
         className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-slate-800 placeholder-slate-400 font-body text-sm
-                   focus:outline-none focus:border-blue-600/50 focus:ring-1 focus:ring-blue-600/20
+                   focus:outline-none focus:border-[#b28b45] focus:ring-1 focus:ring-[#d8bf8d]/50
                    transition-all duration-200"
       />
     </div>

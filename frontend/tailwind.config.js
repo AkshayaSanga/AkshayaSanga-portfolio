@@ -4,19 +4,19 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Classic blue color palette
+        // Luxury classic palette
         primary: {
-          50: '#eff6ff',
-          100: '#dbeafe',
-          200: '#bfdbfe',
-          300: '#93c5fd',
-          400: '#60a5fa',
-          500: '#3b82f6',
-          600: '#2563eb',
-          700: '#1d4ed8',
-          800: '#1e40af',
-          900: '#1e3a8a',
-          950: '#172554',
+          50: '#f4efe8',
+          100: '#e9e0d2',
+          200: '#d9c3a1',
+          300: '#c7a66d',
+          400: '#b28b45',
+          500: '#8f6a32',
+          600: '#6d4d2e',
+          700: '#4a3828',
+          800: '#2a221d',
+          900: '#171310',
+          950: '#100d0b',
         },
       },
       fontFamily: {

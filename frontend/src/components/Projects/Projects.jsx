@@ -43,7 +43,7 @@ export default function Projects() {
               className={`px-5 py-2 rounded-full font-body text-sm transition-all duration-300 ${
                 filter === cat
                   ? 'bg-primary-600 text-white shadow-sm'
-                  : 'bg-white border border-slate-200 text-slate-600 hover:text-primary-600 hover:border-slate-300'
+                  : 'bg-[#fffdf9] border border-[#e5d8c4] text-[#5d5047] hover:text-primary-600 hover:border-[#caa76d]'
               }`}
             >
               {cat}
@@ -90,8 +90,8 @@ function ProjectCard({ project, index, inView }) {
         transition={{ duration: 0.6, ease: 'easeInOut' }}
       >
         {/* Front Face */}
-        <div className="absolute w-full h-full bg-white border border-slate-200/60 rounded-2xl flex flex-col overflow-hidden shadow-sm" style={{ backfaceVisibility: 'hidden' }}>
-          <div className="h-32 bg-slate-100/50 flex items-center justify-center relative overflow-hidden border-b border-slate-200/60">
+        <div className="absolute w-full h-full bg-[#fffdf9] border border-[#e5d8c4] rounded-2xl flex flex-col overflow-hidden shadow-sm" style={{ backfaceVisibility: 'hidden' }}>
+          <div className="h-32 bg-[#f7f1ea] flex items-center justify-center relative overflow-hidden border-b border-[#e5d8c4]">
             <div className="text-center">
               <div
                 className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-2 font-display font-bold text-xl text-white shadow-sm"
@@ -101,21 +101,21 @@ function ProjectCard({ project, index, inView }) {
               </div>
             </div>
             {project.featured && (
-              <div className="absolute top-3 right-3 flex items-center gap-1 px-2 py-1 rounded-full bg-white border border-slate-200/80 shadow-sm">
+              <div className="absolute top-3 right-3 flex items-center gap-1 px-2 py-1 rounded-full bg-[#fffdf9] border border-[#e5d8c4] shadow-sm">
                 <HiStar size={10} className="text-primary-600" />
                 <span className="font-mono text-xs text-primary-600">Featured</span>
               </div>
             )}
-            <div className="absolute top-3 left-3 px-2 py-1 rounded-full bg-white border border-slate-200/80 font-mono text-[10px] text-slate-500 uppercase tracking-wider">{project.category}</div>
+            <div className="absolute top-3 left-3 px-2 py-1 rounded-full bg-[#fffdf9] border border-[#e5d8c4] font-mono text-[10px] text-[#6d625a] uppercase tracking-wider">{project.category}</div>
           </div>
           <div className="p-6 flex flex-col flex-1">
-            <h3 className="font-display font-bold text-slate-800 text-lg mb-2">
+            <h3 className="font-display font-bold text-[#1c1816] text-lg mb-2">
               {project.title}
             </h3>
-            <p className="font-body text-slate-600 text-sm leading-relaxed flex-1 mb-6 line-clamp-3">
+            <p className="font-body text-[#5d5047] text-sm leading-relaxed flex-1 mb-6 line-clamp-3">
               {project.description}
             </p>
-            <div className="mt-auto flex items-center justify-center gap-2 font-mono text-xs text-slate-400">
+            <div className="mt-auto flex items-center justify-center gap-2 font-mono text-xs text-[#8b7967]">
               <FaInfoCircle />
               <span>Hover for details</span>
             </div>
@@ -123,19 +123,19 @@ function ProjectCard({ project, index, inView }) {
         </div>
 
         {/* Back Face */}
-        <div className="absolute w-full h-full bg-white border border-slate-300 rounded-2xl flex flex-col overflow-hidden shadow-lg shadow-slate-100/50" style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}>
+        <div className="absolute w-full h-full bg-[#fffdf9] border border-[#d7bf96] rounded-2xl flex flex-col overflow-hidden shadow-lg shadow-[#d7bf96]/15" style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}>
           <div className="p-6 flex flex-col flex-1">
-            <h4 className="font-display font-bold text-slate-800 text-lg mb-2">
+            <h4 className="font-display font-bold text-[#1c1816] text-lg mb-2">
               {project.title}
             </h4>
-            <p className="font-body text-slate-600 text-sm leading-relaxed flex-1 mb-6">
+            <p className="font-body text-[#5d5047] text-sm leading-relaxed flex-1 mb-6">
               {project.description}
             </p>
 
             {/* Tags */}
             <div className="flex flex-wrap gap-2 mb-5">
               {project.tags.map(tag => (
-                <span key={tag} className="px-2.5 py-1 rounded-md bg-slate-100 border border-slate-200/80 font-mono text-xs text-slate-600">
+                <span key={tag} className="px-2.5 py-1 rounded-md bg-[#f7f1ea] border border-[#e5d8c4] font-mono text-xs text-[#5d5047]">
                   {tag}
                 </span>
               ))}
@@ -148,7 +148,7 @@ function ProjectCard({ project, index, inView }) {
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 text-xs py-2.5 px-4 rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors duration-200"
+                  className="flex-1 flex items-center justify-center gap-2 text-xs py-2.5 px-4 rounded-lg border border-[#e5d8c4] text-[#5d5047] hover:bg-[#f7f1ea] hover:text-[#1c1816] transition-colors duration-200"
                   onClick={e => e.stopPropagation()}
                 >
                   <FaGithub />

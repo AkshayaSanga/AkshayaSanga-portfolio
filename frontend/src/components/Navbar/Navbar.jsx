@@ -46,7 +46,7 @@ export default function Navbar() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.4 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled ? 'py-3 bg-slate-50/80 backdrop-blur-md border-b border-slate-200/60 shadow-sm shadow-slate-100/50' : 'py-5'
+          scrolled ? 'py-3 bg-[#f7f3ee]/85 backdrop-blur-md border-b border-[#e5d8c4]/70 shadow-sm shadow-[#d7bf96]/10' : 'py-5'
         }`}
       >
         <nav className="max-w-6xl mx-auto px-6 flex items-center justify-between">
@@ -54,7 +54,7 @@ export default function Navbar() {
           <a
             href="#"
             onClick={e => handleClick(e, '#hero')}
-            className="font-bold text-slate-800 text-sm tracking-tight hover:text-primary-600 transition-colors"
+            className="font-display font-semibold text-[#1c1816] text-base tracking-tight hover:text-primary-600 transition-colors"
           >
             Akshaya Sanga
           </a>
@@ -87,7 +87,7 @@ export default function Navbar() {
           {/* Mobile toggle */}
           <button
             onClick={() => setMenuOpen(o => !o)}
-            className="md:hidden text-slate-500 hover:text-slate-900 transition-colors"
+            className="md:hidden text-[#6d625a] hover:text-[#1c1816] transition-colors"
             aria-label="Toggle menu"
           >
             {menuOpen ? <HiX size={20} /> : <HiMenuAlt3 size={20} />}
@@ -105,13 +105,13 @@ export default function Navbar() {
             transition={{ duration: 0.2 }}
             className="fixed inset-x-0 top-[56px] z-40 md:hidden px-4"
           >
-            <div className="rounded-xl bg-white border border-slate-200/80 overflow-hidden shadow-2xl shadow-slate-200/40">
+            <div className="rounded-xl bg-[#fffdf9] border border-[#e5d8c4] overflow-hidden shadow-2xl shadow-[#d7bf96]/20">
               {NAV_LINKS.map(link => (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={e => handleClick(e, link.href)}
-                  className="flex items-center px-5 py-3.5 text-sm text-slate-600 hover:text-blue-600 hover:bg-slate-50 border-b border-slate-100 last:border-0 transition-colors"
+                  className="flex items-center px-5 py-3.5 text-sm text-[#5d5047] hover:text-[#6d4d2e] hover:bg-[#f7f1ea] border-b border-[#eee4d7] last:border-0 transition-colors"
                 >
                   {link.label}
                 </a>

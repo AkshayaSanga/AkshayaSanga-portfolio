@@ -1,79 +1,78 @@
 import { motion } from 'framer-motion'
 import { CgCPlusPlus } from 'react-icons/cg'
-import { FaAws, FaC, FaChartBar, FaCss3Alt, FaDatabase, FaHtml5, FaJava, FaServer } from 'react-icons/fa6'
+import { FaChartBar, FaCss3Alt, FaDatabase, FaHtml5, FaJava, FaServer } from 'react-icons/fa6'
 import {
-  SiDocker,
-  SiGit, SiGithub,
-  SiJavascript,
-  SiMongodb,
-  SiNextdotjs,
-  SiNodedotjs,
-  SiPostman,
-  SiPython,
-  SiReact,
-  SiTypescript,
-  SiVercel
+    SiDocker,
+    SiGit, SiGithub,
+    SiJavascript,
+    SiPython,
+    SiReact
 } from 'react-icons/si'
 import { useInView } from 'react-intersection-observer'
 
 const SKILL_GROUPS = [
   {
-    category: 'Languages',
-    accent: '#4338ca', // Indigo
+    category: 'Programming Languages',
+    accent: '#4338ca',
     skills: [
       { name: 'Python',      icon: SiPython,       level: 90, color: '#3776ab' },
       { name: 'Java',        icon: FaJava,         level: 85, color: '#e32c2e' },
       { name: 'JavaScript',  icon: SiJavascript,   level: 80, color: '#f7df1e' },
-      { name: 'TypeScript',  icon: SiTypescript,   level: 75, color: '#3178c6' },
       { name: 'C++',         icon: CgCPlusPlus,    level: 70, color: '#00599c' },
-      { name: 'C',           icon: FaC,            level: 70, color: '#a8b9cc' },
+      { name: 'SQL',         icon: FaDatabase,     level: 85, color: '#336791' },
     ],
   },
   {
-    category: 'Frontend Development',
-    accent: '#0d9488', // Teal
+    category: 'AI & Generative AI',
+    accent: '#0d9488',
     skills: [
-      { name: 'React.js',    icon: SiReact,        level: 85, color: '#61dafb' },
-      { name: 'Next.js',     icon: SiNextdotjs,    level: 70, color: '#0f172a' },
-      { name: 'HTML5',       icon: FaHtml5,        level: 92, color: '#e34f26' },
-      { name: 'CSS3',        icon: FaCss3Alt,      level: 88, color: '#264de4' },
+      { name: 'Machine Learning', icon: FaChartBar, level: 88, color: '#1da967' },
+      { name: 'LLMs',            icon: FaChartBar, level: 82, color: '#10b981' },
+      { name: 'RAG',             icon: FaChartBar, level: 80, color: '#14b8a6' },
+      { name: 'Prompt Engineering', icon: FaChartBar, level: 80, color: '#22c55e' },
+      { name: 'Hugging Face',    icon: FaChartBar, level: 78, color: '#f59e0b' },
     ],
   },
   {
-    category: 'Backend & Databases',
-    accent: '#db2777', // Pink
+    category: 'Full-Stack Development',
+    accent: '#db2777',
     skills: [
-      { name: 'Node.js',    icon: SiNodedotjs, level: 80, color: '#339933' },
-      { name: 'MongoDB',    icon: SiMongodb,   level: 80, color: '#47a248' },
-      { name: 'SQL',        icon: FaDatabase,  level: 85, color: '#336791' },
+      { name: 'React',       icon: SiReact,        level: 85, color: '#61dafb' },
+      { name: 'FastAPI',     icon: FaServer,       level: 82, color: '#009688' },
+      { name: 'REST APIs',   icon: FaServer,       level: 80, color: '#8b5cf6' },
+      { name: 'HTML',        icon: FaHtml5,        level: 90, color: '#e34f26' },
+      { name: 'CSS',         icon: FaCss3Alt,      level: 86, color: '#264de4' },
     ],
   },
   {
-    category: 'AI, ML & Data Analytics',
-    accent: '#16a34a', // Green
+    category: 'Data & ML',
+    accent: '#16a34a',
     skills: [
-      { name: 'Machine Learning', icon: FaChartBar, level: 85, color: '#1da967' },
-      { name: 'Power BI',   icon: FaChartBar,  level: 75, color: '#f2c811' },
-      { name: 'Tableau',    icon: FaChartBar,  level: 70, color: '#e97627' },
+      { name: 'Pandas',            icon: FaChartBar, level: 85, color: '#3b82f6' },
+      { name: 'NumPy',             icon: FaChartBar, level: 82, color: '#4f46e5' },
+      { name: 'Scikit-learn',      icon: FaChartBar, level: 80, color: '#16a34a' },
+      { name: 'Data Preprocessing', icon: FaChartBar, level: 84, color: '#f59e0b' },
+      { name: 'Feature Engineering', icon: FaChartBar, level: 80, color: '#ef4444' },
     ],
   },
   {
-    category: 'Tools & DevOps',
-    accent: '#ca8a04', // Yellow
+    category: 'Core CS',
+    accent: '#ca8a04',
+    skills: [
+      { name: 'DSA',       icon: FaServer,  level: 88, color: '#f59e0b' },
+      { name: 'OOP',       icon: FaServer,  level: 85, color: '#14b8a6' },
+      { name: 'DBMS',      icon: FaDatabase, level: 82, color: '#3b82f6' },
+      { name: 'OS',        icon: FaServer,  level: 78, color: '#a78bfa' },
+    ],
+  },
+  {
+    category: 'Tools',
+    accent: '#64748b',
     skills: [
       { name: 'Git',      icon: SiGit,      level: 88, color: '#f05032' },
       { name: 'GitHub',   icon: SiGithub,   level: 87, color: '#0f172a' },
       { name: 'Docker',   icon: SiDocker,   level: 75, color: '#2496ed' },
-      { name: 'Postman',  icon: SiPostman,  level: 80, color: '#ff6c37' },
-      { name: 'Vercel',   icon: SiVercel,   level: 80, color: '#0f172a' },
-    ],
-  },
-  {
-    category: 'Exploring Next',
-    accent: '#64748b', // Slate
-    skills: [
-      { name: 'AWS',          icon: FaAws,               level: 0, color: '#ff9900' },
-      { name: 'System Design',icon: FaServer,            level: 0, color: '#94a3b8' },
+      { name: 'Jupyter',  icon: FaChartBar, level: 80, color: '#f59e0b' },
     ],
   },
 ]

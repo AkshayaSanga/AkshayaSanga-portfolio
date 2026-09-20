@@ -46,7 +46,7 @@ const PROFILES = [
     url: 'https://www.linkedin.com/in/akshaya-sanga-b9bb07307',
     icon: FaLinkedin, // Keep linkedin color
     color: '#0a66c2',
-    bg: 'from-sky-500/20 to-blue-500/10',
+    bg: 'from-[#d8bf8d]/25 to-[#f7f1ea]/30',
     stats: [
       { label: 'Connections',  value: '500+ Connections' },
     ],
